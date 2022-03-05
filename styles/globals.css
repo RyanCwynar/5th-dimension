@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Red_Hat_Text';
+  src: url(../assets/font/RedHatText-Regular.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Red_Rose';
+  src: url(../assets/font/RedRose-Regular.ttf);
+}
+
+.hover\:border-gradient-tl-blue-green-gray-900:hover {
+  background: linear-gradient(to right, #200f30, #200f30),
+    linear-gradient(137.62deg, #ffb950 -44.68%, #8001ff 104.21%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.outlineButton > span {
+  @apply bg-buttonGradient bg-clip-text text-transparent;
+}
+
+.outlineButton:hover > span {
+  @apply bg-buttonGradient bg-clip-text text-transparent;
+}
+* .gradient-border-3 {
+  border: 3px solid transparent;
+}
+
+li::marker {
+  font-size: 20px;
+}
+
+.text-gradient {
+  @apply bg-textGradient bg-clip-text text-transparent;
+}
+
+.text-gradient-opacity {
+  @apply bg-textGradientOpacity bg-clip-text text-transparent;
+}
+
+.method-item > div:hover img,
+.social-link:hover img {
+  filter: brightness(1.4);
+}
