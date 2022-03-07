@@ -24,6 +24,8 @@ import {
   teamData,
 } from '../data/data'
 import { FadeIn, SlideIn } from '../components/Patials/AnimateWrapper'
+import Layout from '../components/Layouts/Layout'
+import Section from '../components/Layouts/Section'
 
 const Home: NextPage = () => {
   return (
@@ -33,13 +35,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="relative">
-        {/* Header */}
-        <header className="absolute z-30 w-full">
-          <Header />
-        </header>
+      <Layout wrapperClassName="relative">
+        <Header />
         {/* Banner Section */}
-        <section className="relative min-h-video overflow-hidden pb-[1px]">
+        <Section wrapperClassName="relative min-h-video overflow-hidden pb-[1px]">
           <video
             src="/5th-dimension-banner.mp4"
             className="fixed max-h-video w-full min-w-video object-cover 2xl:max-h-[710px] xxl:max-h-[768px] 3xl:max-h-[840px]"
@@ -48,9 +47,8 @@ const Home: NextPage = () => {
             playsInline
             muted
           ></video>
-          {/* <div className="absolute -bottom-1 h-[220px] w-full bg-bannerGradient"></div> */}
-        </section>
-        <section className="relative -mt-10 bg-bannerGradient">
+        </Section>
+        <Section wrapperClassName="relative -mt-10 bg-bannerGradient">
           <div className="banner-content-wrapper w-full pl-6 pr-9">
             <div className="mx-auto max-w-[1440px]">
               <div className="grid grid-cols-2 items-center gap-[78px]">
@@ -107,11 +105,11 @@ const Home: NextPage = () => {
               <DoubleArrowDown />
             </Link>
           </div>
-        </section>
-        <section className="relative z-30 bg-contentGradient">
-          <section
-            className="mx-auto max-w-[1298px] px-10 pt-16"
-            id="topSection"
+        </Section>
+        <Section wrapperClassName="relative z-30 bg-contentGradient">
+          <Section
+            wrapperClassName="mx-auto max-w-[1298px] px-10 pt-16"
+            navigateID="topSection"
           >
             <div className="flex w-full items-center">
               <div className="w-full max-w-[770px] pr-12">
@@ -145,9 +143,9 @@ const Home: NextPage = () => {
                 </SlideIn>
               </div>
             </div>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-[133px] max-w-[1120px] px-[55px]">
+          <Section wrapperClassName="mx-auto mt-[133px] max-w-[1120px] px-[55px]">
             <div className="mx-auto flex w-full  items-start ">
               <div className="w-full max-w-[465px]">
                 <SlideIn xOffset={-100} delayOrder={1}>
@@ -213,9 +211,9 @@ const Home: NextPage = () => {
                 </FadeIn>
               </div>
             </div>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-40 max-w-[1240px] px-5 text-center">
+          <Section wrapperClassName="mx-auto mt-40 max-w-[1240px] px-5 text-center">
             <SlideIn xOffset={-150} delayOrder={1}>
               <Heading className="text-center text-heading text-white">
                 How to Get an Owlie
@@ -252,9 +250,12 @@ const Home: NextPage = () => {
                 Join Discord
               </Button>
             </FadeIn>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-40 max-w-[1235px] px-9" id="roadmap">
+          <Section
+            wrapperClassName="mx-auto mt-40 max-w-[1235px] px-9"
+            navigateID="roadmap"
+          >
             <SlideIn xOffset={-100} delayOrder={1}>
               <Heading className="text-center text-heading text-white">
                 5th Dimension Roadmap
@@ -304,9 +305,12 @@ const Home: NextPage = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-40 max-w-[1235px] px-9" id="lore">
+          <Section
+            wrapperClassName="mx-auto mt-40 max-w-[1235px] px-9"
+            navigateID="lore"
+          >
             <SlideIn xOffset={-100} delayOrder={1}>
               <Heading className="text-heading text-white">Shuggaverse</Heading>
             </SlideIn>
@@ -354,9 +358,12 @@ const Home: NextPage = () => {
                 </SlideIn>
               </div>
             </div>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-32 max-w-[872px] px-6" id="faq">
+          <Section
+            wrapperClassName="mx-auto mt-32 max-w-[872px] px-6"
+            navigateID="faq"
+          >
             <SlideIn xOffset={-100} delayOrder={1}>
               <Heading className="text-center text-heading text-white">
                 FAQ
@@ -408,9 +415,12 @@ const Home: NextPage = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-[266px] max-w-[875px] px-6" id="team">
+          <Section
+            wrapperClassName="mx-auto mt-[266px] max-w-[875px] px-6"
+            navigateID="team"
+          >
             <SlideIn xOffset={-100} delayOrder={1}>
               <Heading className="text-center text-heading text-white">
                 Team
@@ -440,9 +450,9 @@ const Home: NextPage = () => {
                 ))}
               </div>
             </div>
-          </section>
+          </Section>
 
-          <section className="mx-auto mt-[264px] px-6 pb-16 text-center">
+          <Section wrapperClassName="mx-auto mt-[264px] px-6 pb-16 text-center">
             <SlideIn xOffset={-100} delayOrder={1}>
               <Heading className="text-heading text-white">
                 You made it this far, so you might as well...
@@ -465,9 +475,9 @@ const Home: NextPage = () => {
                 </FadeIn>
               </a>
             </div>
-          </section>
-        </section>
-      </main>
+          </Section>
+        </Section>
+      </Layout>
     </div>
   )
 }
