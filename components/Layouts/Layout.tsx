@@ -2,14 +2,14 @@ import React, { ReactNode } from 'react'
 import Header from '../Patials/Header'
 
 interface LayoutProps {
-  wrapperClassName?: string
+  className?: string
   children: ReactNode
 }
 
-const Layout = ({wrapperClassName, children }: LayoutProps) => {
+const Layout = ({className, children }: LayoutProps) => {
   return (
     <>
-      <main className={`${wrapperClassName}`} >
+      <main className={`${className}`} >
         <header className="absolute z-30 w-full">
           <Header />
         </header>

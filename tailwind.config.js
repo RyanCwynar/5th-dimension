@@ -4,6 +4,16 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      'tablet': '834px',
+      'lg': '1024px',
+      'xl': '1280px',
+      'xln': '1440px',
+      'xxln': '1536px',
+      'xxl': '1650px',
+      '3xl': '1800px',
+    },
     extend: {
       container: {
         padding: {
@@ -17,16 +27,21 @@ module.exports = {
       spacing: {
         21: '84px'
       },
-      screens: {
-        xln: '1440px',
-        'xxl': '1650px',
-        '3xl': '1800px',
-      },
+      // screens: {
+      //   'xln': '1440px',
+        // 'xxln': '1536px',
+        // 'xxl': '1650px',
+        // '3xl': '1800px',
+      // },
       maxHeight: {
-        'video': '686px'
+        'video': '686px',
+        45: '180px',
       },
       minHeight: {
         'video': '686px'
+      },
+      height: {
+        45: '180px',
       },
       minWidth: {
         'video': '1480px'
@@ -36,7 +51,11 @@ module.exports = {
         'RedRose': 'Red_Rose',
       },
       backgroundImage: {
+        headerGradient: 'linear-gradient(168.75deg, #000000 0%, #200F30 100%)',
         bannerGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 40%, #000000 100% )',
+        bannerGradientBlack: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(0, 0, 0) 40%, #000000 100% )',
+        bannerGradientTablet: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 30%, #000000 100% )',
+        bannerGradientMobile: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 92.19%)',
         contentGradient: 'linear-gradient(160.26deg, #000000 10.79%, #200F30 25.52%, #000000 38.69%, #200F30 53.92%, #000000 73.03%, #200F30 100%)',
         buttonGradient: 'linear-gradient(142.72deg, #8001FF -3.71%, #FFB950 147.71%)',
         buttonGradientHover: 'linear-gradient(137.62deg, #FFB950 -44.68%, #8001FF 104.21%)',
@@ -57,8 +76,16 @@ module.exports = {
         content: ['30px', '39.69px'],
         contentSmall: ['24px', '31.75px'],
         heading: ['50px', '62.45px'],
+        headingMobile: ['25px', '33.07px'],
         buttonPrimary: ['25px', '33.07px'],
-        buttonSmall: ['15px', '19.85px']
+        buttonSmall: ['15px', '19.85px'],
+        2.5: ['10px', '13.23px'],
+        3: ['12px', '15.88px'],
+        3.75: ['15px', '19.85px'],
+        4: ['1rem', '21.17px'],
+        4.5: ['18px', '23.81px'],
+        5: ['1.25rem', '26.46px'],
+        8: ['40px', '49.96px' ]
       }
     },
   },

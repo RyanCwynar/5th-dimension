@@ -18,10 +18,10 @@ const Button = ({
 }: ButtonProps) => {
   const baseClassName =
     size === ButtonSize.PRIMARY
-      ? `h-[3.75rem] max-w-[268px] bg-buttonGradient py-[13px] px-14 text-buttonPrimary font-bold text-white hover:bg-buttonGradientHover`
+      ? `h-[42px] xl:h-[3.75rem] max-w-[186px] xl:max-w-[268px] bg-buttonGradient py-[13px] pl-4 text-buttonSmall xl:text-buttonPrimary font-bold text-white hover:bg-buttonGradientHover`
       : size === ButtonSize.SMALL && !outline
-      ? `h-[34px] max-w-[90px] font-semibold bg-buttonGradient py-2 text-center text-buttonSmall text-white hover:bg-buttonGradientHover`
-      : `max-w-[90px]`
+      ? `h-6 xl:h-[34px] max-w-[64px] xl:max-w-[90px] font-semibold bg-buttonGradient xl:py-2 text-center text-2.5 xl:text-buttonSmall text-white hover:bg-buttonGradientHover`
+      : `max-w-[64px] xl:max-w-[90px] font-semibold`
 
   return (
     <>
@@ -32,9 +32,9 @@ const Button = ({
           children
         ) : (
           <>
-            <div className="h-[34px] w-full rounded-[20px] bg-featureWrapperGradient p-[.15rem] font-semibold">
-              <div className="h-full rounded-2xl bg-black text-white">
-                <div className="outlineButton flex h-full w-full items-center justify-center rounded-lg bg-featureGradient hover:bg-featureGradientHover">
+            <div className="h-6 xl:h-[34px] w-full rounded-[20px] bg-featureWrapperGradient p-[2px] text-2.5 xl:text-buttonSmall xl:p-[.15rem] font-semibold">
+              <div className="h-full text-white bg-black rounded-2xl">
+                <div className="flex items-center justify-center w-full h-full rounded-lg outlineButton bg-featureGradient hover:bg-featureGradientHover">
                   <span>{children}</span>
                 </div>
               </div>

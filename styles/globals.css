@@ -21,26 +21,26 @@
 }
 
 .outlineButton > span {
-  @apply bg-buttonGradient bg-clip-text text-transparent;
+  @apply text-transparent bg-buttonGradient bg-clip-text;
 }
 
 .outlineButton:hover > span {
-  @apply bg-buttonGradient bg-clip-text text-transparent;
+  @apply text-transparent bg-buttonGradient bg-clip-text;
 }
 * .gradient-border-3 {
   border: 3px solid transparent;
 }
 
 li::marker {
-  font-size: 20px;
+  @apply text-4 xl:text-5;
 }
 
 .text-gradient {
-  @apply bg-textGradient bg-clip-text text-transparent;
+  @apply text-transparent bg-textGradient bg-clip-text;
 }
 
 .text-gradient-opacity {
-  @apply bg-textGradientOpacity bg-clip-text text-transparent;
+  @apply text-transparent bg-textGradientOpacity bg-clip-text;
 }
 
 .method-item > div:hover img,

@@ -1,15 +1,15 @@
 import React, { ReactNode } from 'react'
 
 interface SectionProps {
-  wrapperClassName?: string
+  className?: string
   children: ReactNode
   navigateID?: string
 }
 
-const Section = ({wrapperClassName, children, navigateID}: SectionProps) => {
+const Section = ({className, children, navigateID}: SectionProps) => {
   return (
     <>
-      <section className={`${wrapperClassName}`} id={`${navigateID}`}>
+      <section className={`${className}`} id={`${navigateID}`}>
         { children }
       </section>
     </>

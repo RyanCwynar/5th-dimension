@@ -49,6 +49,7 @@ export const FadeIn = ({
       initial="hidden"
       whileInView="show"
       variants={variants}
+      className={`${className}`}
       viewport={{ once: true }}
     >
       {children}
