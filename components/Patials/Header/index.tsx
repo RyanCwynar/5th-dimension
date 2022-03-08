@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, animateScroll as scroll } from 'react-scroll'
-import { SlideIn } from '../AnimateWrapper'
+import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 
 const MenuAlt = () => {
   return (
@@ -102,13 +102,13 @@ function Header() {
           <div className="flex items-center justify-between h-10 tablet:h-21">
             <div style={{ flex: 5 }}>
               <a href="/">
-                <SlideIn xOffset={-100} delayOrder={1}>
+                <AnimateWrapper animateType={AnimateType.SLIDEIN} xOffset={-100} delayOrder={1}>
                   <img
                     className="max-w-[127px] tablet:w-[253px]"
                     src="/5th-dimension-logo.png"
                     alt="Workflow"
                   />
-                </SlideIn>
+                </AnimateWrapper>
               </a>
             </div>
             <div
@@ -117,9 +117,10 @@ function Header() {
             >
               <div className="flex items-baseline justify-between space-x-2">
                 {routes.map((route, index) => (
-                  <SlideIn
+                  <AnimateWrapper
                     xOffset={-100}
                     delayOrder={1.5 + index * 0.5}
+                    animateType={AnimateType.SLIDEIN}
                     key={index}
                   >
                     <Link
@@ -131,21 +132,21 @@ function Header() {
                     >
                       {route.title}
                     </Link>
-                  </SlideIn>
+                  </AnimateWrapper>
                 ))}
               </div>
             </div>
             <div className="flex items-center justify-end" style={{ flex: 2 }}>
               <div className="items-center justify-center hidden lg:flex">
                 <a href="#" className="social-link">
-                  <SlideIn xOffset={-100} delayOrder={4}>
+                  <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
                     <img src="/Icons/IDiscord.png" className="mr-2" alt="" />
-                  </SlideIn>
+                  </AnimateWrapper>
                 </a>
                 <a href="#" className="social-link">
-                  <SlideIn xOffset={-100} delayOrder={4.5}>
+                  <AnimateWrapper xOffset={-100} delayOrder={4.5} animateType={AnimateType.SLIDEIN}>
                     <img src="/Icons/ITwitter.png" className="ml-2" alt="" />
-                  </SlideIn>
+                  </AnimateWrapper>
                 </a>
               </div>
               <button
@@ -179,6 +180,7 @@ function Header() {
                     duration={500}
                     onClick={() => setIsOpen(false)}
                     className={`${route.className} mb-5 lg:mb-[50px]`}
+                    key={index}
                   >
                     {route.title}
                   </Link>
@@ -200,35 +202,6 @@ function Header() {
           </div>
         </div>
 
-        {/* <Transition
-          show={isOpen}
-          enter="transition ease-out duration-100 transform"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="transition ease-in duration-75 transform"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          {(ref) => (
-            <div className="mx-auto max-w-[1440px] px-10">
-              <div className="lg:hidden" id="mobile-menu">
-                <div ref={ref} className="">
-                  {routes.map((route, index) => (
-                    <Link
-                      to={route.to}
-                      smooth={true}
-                      offset={-20}
-                      duration={500}
-                      className={route.className}
-                    >
-                      {route.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-        </Transition> */}
       </nav>
     </header>
   )

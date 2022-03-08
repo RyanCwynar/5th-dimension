@@ -1,0 +1,7 @@
+export { OwileNFTSection } from './OwileNFT'
+export { CreateOwileSection } from './CreateOwile'
+export { HowtoOwileSection } from './HowtoOwile'
+export { RoadmapSection } from './Roadmap'
+export { ShuggaverseSection } from './Shuggaverse'
+export { FAQSection } from './FAQ'
+export { TeamSection } from './Team'

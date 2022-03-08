@@ -10,9 +10,7 @@ const Layout = ({className, children }: LayoutProps) => {
   return (
     <>
       <main className={`${className}`} >
-        <header className="absolute z-30 w-full">
-          <Header />
-        </header>
+        <Header />
         { children }
       </main>
     </>
