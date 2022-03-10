@@ -25,31 +25,31 @@ const routes = [
   {
     to: 'topSection',
     className:
-      'text-gradient-opacity block cursor-pointer font-RedHat text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
+      'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
     title: 'Owlie NFTs',
-  },
-  {
-    to: 'roadmap',
-    className:
-      'text-gradient-opacity block cursor-pointer font-RedHat text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
-    title: 'Roadmap',
   },
   {
     to: 'lore',
     className:
-      'text-gradient-opacity block cursor-pointer font-RedHat text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
-    title: 'Lore',
+      'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
+    title: 'About Us',
+  },
+  {
+    to: 'roadmap',
+    className:
+      'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
+    title: 'Roadmap',
   },
   {
     to: 'faq',
     className:
-      'text-gradient-opacity block cursor-pointer font-RedHat text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
+      'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
     title: 'FAQ',
   },
   {
     to: 'team',
     className:
-      'text-gradient-opacity block cursor-pointer font-RedHat text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
+      'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
     title: 'Team',
   },
 ]

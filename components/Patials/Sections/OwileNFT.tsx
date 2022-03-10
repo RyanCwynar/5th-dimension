@@ -17,7 +17,7 @@ export const OwileNFTSection = () => {
             </Heading>
           </AnimateWrapper>
           <AnimateWrapper yOffset={0} delayOrder={2} animateType={AnimateType.FADEIN}>
-            <ul className="mt-7 xl:mt-[31px] pl-6 list-disc text-3 tablet:text-4 xl:text-headingMobile font-normal text-primary max-w-[500px] tablet:max-w-none mx-auto">
+            <ul className="mt-7 xl:mt-[31px] pl-6 list-disc text-3 tablet:text-4 xl:text-headingMobile font-RedHat text-primary max-w-[500px] tablet:max-w-none mx-auto">
               <li>WL spots for community and partner projects.</li>
               <li>Free future 5th Dimension NFTs.</li>
               <li>Free digital copy of “Birth of the Shugga” comic book album</li>

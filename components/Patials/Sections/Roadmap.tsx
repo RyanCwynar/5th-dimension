@@ -40,7 +40,7 @@ export const RoadmapSection = () => {
                       <Paragraph className="font-RedHatBold text-white text-3.75 tablet:text-5 xl:text-content">
                         {roadmap.title}
                       </Paragraph>
-                      <ul className="mt-[10px] tablet:mt-3 xl:mt-[21px] list-disc pl-3 tablet:pl-6 text-3 tablet:text-4 xl:text-contentSmall font-normal text-white text-opacity-80">
+                      <ul className="mt-[10px] tablet:mt-3 font-RedHat xl:mt-[21px] list-disc pl-3 tablet:pl-6 text-3 tablet:text-4 xl:text-contentSmall font-normal text-white text-opacity-80">
                         {roadmap.description?.map((item) => (
                           <li key={item}>{item}</li>
                         ))}

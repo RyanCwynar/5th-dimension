@@ -44,7 +44,7 @@ export const FAQSection = () => {
                           <Paragraph className="font-bold text-white text-3.75 tablet:text-5 xl:text-content">
                             Q{`${index + 1}`}
                           </Paragraph>
-                          <Paragraph className="flex-1 pl-3 font-normal text-left text-white text-3 tablet:text-4 xl:text-contentSmall">
+                          <Paragraph className="flex-1 pl-20 font-normal text-left text-white text-3 tablet:text-4 xl:text-contentSmall">
                             {item.question}
                           </Paragraph>
                           <img src='/Icons/IArrowdown.svg' className='w-[10px] tablet:w-[21px]' />

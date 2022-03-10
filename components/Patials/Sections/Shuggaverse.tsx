@@ -16,13 +16,13 @@ export const ShuggaverseSection = () => {
       <div className="flex w-full">
         <div className="max-w-[394px] xl:max-w-[585px] hidden tablet:block">
           <AnimateWrapper yOffset={-70} delayOrder={1.5} animateType={AnimateType.FADEIN}>
-            <Paragraph className="mt-5 tablet:mt-9 xl:mt-[29px] text-3.75 tablet:text-5 xl:text-content font-bold text-white">
+            <Paragraph className="mt-5 tablet:mt-9 xl:mt-[29px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
               5th Dimension Multiverse
             </Paragraph>
             <Paragraph className="mt-6 text-4 xl:text-contentSmall text-primary">
               The 5th Dimension multiverse will contain many worlds. Each world is dedicated to a different area of arts and entertainment. There will be worlds for fine art, music, animated art, film, and more – even discovering new genres that are possible because of NFT technology.
             </Paragraph>
-            <Paragraph className="mt-5 tablet:mt-9 xl:mt-[26px] text-3.75 tablet:text-5 xl:text-content font-bold text-white">
+            <Paragraph className="mt-5 tablet:mt-9 xl:mt-[26px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
               Shuggaverse
             </Paragraph>
             <Paragraph className="mt-6 text-4 xl:text-contentSmall text-primary">
@@ -61,7 +61,7 @@ export const ShuggaverseSection = () => {
             <Paragraph className="mt-[2px] text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>
-            <Paragraph className="mt-[14px] text-left tablet:mt-9 xl:mt-[29px] text-3.75 tablet:text-5 xl:text-content font-bold text-white">
+            <Paragraph className="mt-[14px] text-left tablet:mt-9 xl:mt-[29px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
               5th Dimension Multiverse
             </Paragraph>
             <Paragraph className="mt-2 text-left text-3 tablet:text-4 xl:text-contentSmall text-primary tablet:mt-6">
@@ -74,7 +74,7 @@ export const ShuggaverseSection = () => {
               Concept Sketch for upcoming project
             </Paragraph>
             <div className="block text-left tablet:hidden">
-              <Paragraph className="mt-5 tablet:mt-9 xl:mt-[26px] text-3.75 tablet:text-5 xl:text-content font-bold text-white">
+              <Paragraph className="mt-5 tablet:mt-9 xl:mt-[26px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
                 Shuggaverse
               </Paragraph>
               <Paragraph className="mt-2 text-3 tablet:text-4 xl:text-contentSmall text-primary tablet:mt-6">

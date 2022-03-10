@@ -142,9 +142,9 @@ const Home: NextPage = () => {
 
           <HowtoOwileSection />
 
-          <RoadmapSection />
-
           <ShuggaverseSection />
+
+          <RoadmapSection />
 
           <FAQSection />
 

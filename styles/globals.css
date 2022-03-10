@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: 'Red_Hat_Text_Regular';
+  src: url(../assets/font/RedHatText-Regular.ttf);
+}
+
+@font-face {
   font-family: 'Red_Hat_Bold';
   src: url(../assets/font/RedHatText-Bold.ttf);
 }

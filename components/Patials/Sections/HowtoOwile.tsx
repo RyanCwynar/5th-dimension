@@ -15,7 +15,7 @@ export const HowtoOwileSection = () => {
           How to Get an Owlie
         </Heading>
       </AnimateWrapper>
-      <div className="grid-cols-1 tablet:grid-cols-3 method-container gap-y-6 mt-[33px] tablet:mt-9 xl:mt-14 hidden tablet:grid"> {/** Slide right to left and left to right */}
+      <div className="grid-cols-1 tablet:grid-cols-3 method-container gap-x-5 gap-y-6 mt-[33px] tablet:mt-9 xl:mt-14 hidden tablet:grid"> {/** Slide right to left and left to right */}
         {methodData.map((method, index) => (
           <AnimateWrapper
             animateType={AnimateType.FADEIN} 
