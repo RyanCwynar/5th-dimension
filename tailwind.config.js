@@ -48,6 +48,7 @@ module.exports = {
       },
       fontFamily: {
         'RedHat': 'Red_Hat_Text',
+        'RedHatBold': 'Red_Hat_Bold',
         'RedRose': 'Red_Rose',
       },
       backgroundImage: {

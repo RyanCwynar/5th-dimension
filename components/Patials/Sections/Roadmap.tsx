@@ -37,7 +37,7 @@ export const RoadmapSection = () => {
                 >
                   <div className="flex flex-col justify-between h-full text-white bg-black rounded-2xl">
                     <div className="h-full w-full rounded-lg bg-featureGradient px-3 tablet:px-5 xl:px-[50px] py-[14px] tablet:py-5 xl:py-[30px] hover:bg-featureGradientHover2">
-                      <Paragraph className="font-bold text-white text-3.75 tablet:text-5 xl:text-content">
+                      <Paragraph className="font-RedHatBold text-white text-3.75 tablet:text-5 xl:text-content">
                         {roadmap.title}
                       </Paragraph>
                       <ul className="mt-[10px] tablet:mt-3 xl:mt-[21px] list-disc pl-3 tablet:pl-6 text-3 tablet:text-4 xl:text-contentSmall font-normal text-white text-opacity-80">

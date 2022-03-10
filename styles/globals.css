@@ -9,8 +9,13 @@
 }
 
 @font-face {
+  font-family: 'Red_Hat_Bold';
+  src: url(../assets/font/RedHatText-Bold.ttf);
+}
+
+@font-face {
   font-family: 'Red_Rose';
-  src: url(../assets/font/RedRose-Regular.ttf);
+  src: url(../assets/font/RedRose-Bold.ttf);
 }
 
 .hover\:border-gradient-tl-blue-green-gray-900:hover {
