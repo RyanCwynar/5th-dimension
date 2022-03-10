@@ -56,7 +56,7 @@ export const RoadmapSection = () => {
                 className="w-full max-w-[221px] xl:max-w-[347px] hidden tablet:block"
               >
                 <div className="h-full">
-                  <img src={roadmap.img} className="h-full max-w-full" alt="" />
+                  <img src={roadmap.img} className="h-full max-w-full rounded-[20px]" alt="" />
                 </div>
               </AnimateWrapper>
             </div>

@@ -23,7 +23,7 @@ export const TeamSection = () => {
               <AnimateWrapper yOffset={70} delayOrder={2 + index * 0.5} animateType={AnimateType.FADEIN}>
                 <img
                   src={team.profileImg}
-                  className="max-w-full"
+                  className="max-w-full rounded-[20px]"
                   alt=""
                 />
                 <Paragraph className="font-bold text-white mt-[18px] xl:mt-7 text-3.75 tablet:text-5 xl:text-content">

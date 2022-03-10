@@ -6,7 +6,7 @@ import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 export const OwileNFTSection = () => {
   return (
     <Section
-      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-10 tablet:pt-16"
+      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-5 tablet:pt-16"
       navigateID="topSection"
     >
       <div className="flex flex-col-reverse items-center w-full tablet:flex-row">
@@ -29,7 +29,7 @@ export const OwileNFTSection = () => {
         </div>
         <div className="flex-grow mt-[25px] tablet:mt-0">
           <AnimateWrapper xOffset={100} delayOrder={1.5} animateType={AnimateType.SLIDEIN}>
-            <img src="/T-Bone_golden.png" className="mx-auto max-w-[110px] tablet:max-w-[220px] xl:max-w-none" />
+            <img src="/T-Bone_golden.png" className="mx-auto max-w-[110px] tablet:max-w-[220px] xl:max-w-[400px]" />
           </AnimateWrapper>
         </div>
       </div>

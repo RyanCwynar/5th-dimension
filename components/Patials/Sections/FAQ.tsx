@@ -5,6 +5,7 @@ import Heading from '../../Elements/Heading'
 import Paragraph from '../../Elements/Paragraph'
 import Section from '../../Layouts/Section'
 import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
+import parse from 'html-react-parser'
 
 export const FAQSection = () => {
   return (
@@ -50,7 +51,18 @@ export const FAQSection = () => {
                         </Disclosure.Button>
                         <Disclosure.Panel className="px-3 pb-5 tablet:px-8">
                           <Paragraph className="font-normal text-3 tablet:text-4 xl:text-contentSmall text-primary">
-                            {item.answer}
+                            <span className="block mb-2">
+                              {parse(item.answer)}
+                            </span>
+                            {
+                              item.lists ?
+                              item.lists.map((list, idx) => (
+                                <span className="block text-left" key={idx}>
+                                  {list}
+                                </span> 
+                              ))
+                              : ""
+                            }
                           </Paragraph>
                         </Disclosure.Panel>
                       </div>

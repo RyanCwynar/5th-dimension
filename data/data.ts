@@ -74,58 +74,92 @@ export const roadmapData = [
 export const teamData = [
   {
     name: 'Quinn Quibbleton',
-    role: 'Project Founder',
+    role: 'Founder / Project Manager',
     description:
-      'Lorem ipsum simet atem a puret sin vonset purifit amect ve soen. Lorem ipsum simet atem a puret sin vonset purifit amect ve soen.',
+      'My passion has always been writing stories and creating music, but it was difficult to balance these activities with my career as a pharmacist. Being aware that many others also struggle with this same problem, I was determined to figure out a path to success that will work for everyone. The 5th Dimension community is being built for this exact purpose – to enable creatives to prosper.',
     profileImg: '/team_01.png',
+  },
+  {
+    name: 'Akbar Lightning',
+    role: 'Philosopher',
+    description:
+      'As a professional artist and educator for 25 years I have perpetually sought out the Renaissance experience. In the metaverse I see the potential for a philosophical explosion that will give rise to new freedoms and human wonders of the world.',
+    profileImg: '/team_03.png',
   },
   {
     name: 'Fianzilla',
     role: 'Artist',
     description:
-      'Lorem ipsum simet atem a puret sin vonset purifit amect ve soen. Lorem ipsum simet atem a puret sin vonset purifit amect ve soen.',
+      'I’m an award-winning artist/illustrator who has worked for many Fortune-500 companies including Miller Brewing Company, Disney and Pepsi just to name a few. I am currently the artist and creative architect here in the 5th dimension, bringing my imagination to life one piece of art at a time.',
     profileImg: '/team_02.png',
   },
   {
-    name: 'Akbar Lightning',
-    role: 'Creative Advisor',
-    description:
-      'Lorem ipsum simet atem a puret sin vonset purifit amect ve soen. Lorem ipsum simet atem a puret sin vonset purifit amect ve soen.',
-    profileImg: '/team_03.png',
-  },
-  {
     name: 'Ralf Wiggim',
-    role: 'Project Manager',
+    role: 'UX / Community Manager',
     description:
-      'Lorem ipsum simet atem a puret sin vonset purifit amect ve soen. Lorem ipsum simet atem a puret sin vonset purifit amect ve soen.',
+      'Hey there! I’m a UI/UX designer with prior experience working with the AthleteX DAO (athletex.io). Now, I am focused on creating 5th Dimensional user experiences.',
     profileImg: '/team_04.png',
   },
 ]
 
 export const faqData = [
   {
-    question: 'Lorem ipsum dolor sit amet sin una vista words',
+    question: 'What is the 5th Dimension?',
     answer:
-      'Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words',
+      'We are creating a decentralized community to support creators, artists, and musicians through networking, collaboration, community grants, and a project launchpad. We aim to provide a better alternative to the centralized establishment, and to restore power to creators everywhere.',
   },
   {
-    question: 'Lorem ipsum dolor sit amet sin una vista words',
+    question: 'What is a multiverse?',
     answer:
-      'Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words',
+      'A multiverse is a DAO that contains many metaverse communities within it. The 5D multiverse will have a decentralized governance structure that facilitates the creation of new communities, promotes their activities, and allows them to share resources.',
   },
   {
-    question: 'Lorem ipsum dolor sit amet sin una vista words',
+    question: 'What is the Shuggaverse?',
     answer:
-      'Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words',
+      'The Shuggaverse is the first metaverse community being created within the 5th Dimension multiverse. This community is focused on combining stories, art, and music into the form of comic book albums. We will be facilitating collaborations, funding promising community projects, and promoting this new genre of entertainment. ',
   },
   {
-    question: 'Lorem ipsum dolor sit amet sin una vista words',
+    question: 'What is the 5th Dimension Art collection?',
     answer:
-      'Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words',
+      'The 5D Art Collection is the second metaverse community being built in the 5th Dimension multiverse. It will be a collection of NFT art created by several hundred different artists. Holders of Owlie NFTs will be eligible to apply to participate in the creation of this unique community and submit art for the project. Stay tuned for more details…',
   },
   {
-    question: 'Lorem ipsum dolor sit amet sin una vista words',
+    question: 'Why do I want to mint an Owlie NFT?',
     answer:
-      'Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words, Lorem ipsum dolor sit amet sin una vista words',
+      'NFT ownership will grant access to:',
+    lists: [
+      '- Whitelist spots for community and partner projects.',
+      '- Free future 5th Dimension NFTs.',
+      '- Free digital copy of “Birth of the Shugga” comic book album.',
+      '- A network of artists, collaboration opportunities, community grants, and project launchpad.',
+      '- A deep, rich Bohemian culture that encourages freedom of expression.',
+      '- Participation in a governance structure built and run by artists.',
+
+    ]
+  },
+  {
+    question: 'When is the Owlie NFT mint date?',
+    answer:
+      'TBA ',
+  },
+  {
+    question: 'What will the mint price be?',
+    answer:
+      'TBA',
+  },
+  {
+    question: 'Wen reveal?',
+    answer:
+      'Owlies will be revealed 48 hours after minting ends.',
+  },
+  {
+    question: 'Where is the best place to find more info?',
+    answer:
+      'In our <a href="https://discord.gg/BW4XKRhyHs" className="underline" target="_blank">Discord</a> . Ask us anything and our mods will answer you as quickly as possible. Also, feel free to browse our server and learn more about our project. You can also stay up to date by following our <a href="https://twitter.com/5thDimension_io" className="underline" target="_blank">Twitter</a> and <a href="https://medium.com/@5thDimension_io" className="underline" target="_blank">Medium</a> accounts.',
+  },
+  {
+    question: 'What blockchain is it on?',
+    answer:
+      'Ethereum.',
   },
 ]

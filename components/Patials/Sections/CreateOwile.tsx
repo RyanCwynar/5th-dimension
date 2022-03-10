@@ -18,10 +18,10 @@ export const CreateOwileSection = () => {
       <div className="flex flex-col tablet:flex-row items-center tablet:items-end w-full mx-auto mt-[30px] tablet:mt-0">
         <div className="w-full max-w-[220px] tablet:max-w-[316px] xl:max-w-[465px]">
           <AnimateWrapper xOffset={-100} delayOrder={1} animateType={AnimateType.SLIDEIN} className="hidden tablet:block"> {/** Slide right to left on mobile */}
-            <img src="/custom-owile.png" alt="" />
+            <img src="/custom-owile.png" alt="" className='rounded-[20px]' />
           </AnimateWrapper>
           <AnimateWrapper xOffset={100} delayOrder={1} animateType={AnimateType.SLIDEIN} className="block tablet:hidden">
-            <img src="/custom-owile.png" alt="" />
+            <img src="/custom-owile.png" alt="" className='rounded-[20px]' />
           </AnimateWrapper>
         </div>
         <div className="flex-grow pl-0 tablet:pl-16 xl:pl-24 mt-[30px] tablet:mt-0">
