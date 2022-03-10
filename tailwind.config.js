@@ -52,9 +52,9 @@ module.exports = {
       },
       backgroundImage: {
         headerGradient: 'linear-gradient(168.75deg, #000000 0%, #200F30 100%)',
-        bannerGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 40%, #000000 100% )',
+        bannerGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 30%, #000000 100% )',
         bannerGradientBlack: 'linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(0, 0, 0) 40%, #000000 100% )',
-        bannerGradientTablet: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 30%, #000000 100% )',
+        bannerGradientTablet: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, #000000 100% )',
         bannerGradientMobile: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 92.19%)',
         contentGradient: 'linear-gradient(160.26deg, #000000 10.79%, #200F30 25.52%, #000000 38.69%, #200F30 53.92%, #000000 73.03%, #200F30 100%)',
         buttonGradient: 'linear-gradient(142.72deg, #8001FF -3.71%, #FFB950 147.71%)',

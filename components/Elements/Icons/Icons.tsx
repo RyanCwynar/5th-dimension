@@ -1,4 +1,4 @@
-export function DoubleArrowDown() {
+export function DoubleArrowDown({className}: {className: string}) {
   return (
     <svg
       width="20"
@@ -6,7 +6,8 @@ export function DoubleArrowDown() {
       viewBox="0 0 20 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ margin: 'auto' }}
+      style={{ marginLeft: 'auto', marginRight: 'auto' }}
+      className={`${className}`}
     >
       <line
         x1="0.707107"

@@ -29,10 +29,10 @@ export const TeamSection = () => {
                 <Paragraph className="font-bold text-white mt-[18px] xl:mt-7 text-3.75 tablet:text-5 xl:text-content">
                   {team.name}
                 </Paragraph>
-                <Paragraph className="mt-[10px] xl:mt-1 font-semibold text-white text-3 tablet:text-4.5 xl:text-contentSmall">
+                <Paragraph className="mt-[10px] xl:mt-2 font-semibold text-white text-3 tablet:text-4.5 xl:text-contentSmall">
                   {team.role}
                 </Paragraph>
-                <Paragraph className="mt-[10px] xl:mt-1 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-primary">
+                <Paragraph className="mt-[10px] xl:mt-2 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-primary">
                   {team.description}
                 </Paragraph>
               </AnimateWrapper>

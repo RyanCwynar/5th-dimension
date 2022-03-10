@@ -8,7 +8,7 @@ import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 export const RoadmapSection = () => {
   return (
     <Section
-      className="mx-auto mt-[61px] tablet:mt-36 xl:mt-40 max-w-[1267px] px-4 tablet:px-[52px]"
+      className="mx-auto mt-[61px] tablet:mt-36 xl:mt-40 max-w-[500px] tablet:max-w-[900px] xl:max-w-[1267px] px-4 tablet:px-[52px]"
       navigateID="roadmap"
     >
       <AnimateWrapper xOffset={-100} delayOrder={1} animateType={AnimateType.SLIDEIN}>

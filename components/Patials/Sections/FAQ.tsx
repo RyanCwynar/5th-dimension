@@ -24,11 +24,11 @@ export const FAQSection = () => {
               <Disclosure>
                 {({ open }) => (
                   <div
-                    className={`min-h-[35px] tablet:min-h-[55px] xl:min-h-[80px] w-full cursor-pointer rounded-[15px] xl:rounded-[20px] ${
+                    className={`min-h-[34px] tablet:min-h-[55px] xl:min-h-[80px] w-full cursor-pointer rounded-[15px] xl:rounded-[20px] ${
                       open
                         ? 'bg-featureWrapperGradient2'
                         : 'bg-featureWrapperGradient'
-                    } p-1 hover:bg-featureWrapperGradient2`}
+                    } p-[2px] tablet:p-1 hover:bg-featureWrapperGradient2`}
                   >
                     <div className="text-white bg-black rounded-[12px] xl:rounded-2xl">
                       {/* <div className="flex flex-col justify-center w-full h-full px-8 text-center rounded-lg bg-featureGradient hover:bg-featureGradientHover2"> */}
@@ -39,7 +39,7 @@ export const FAQSection = () => {
                             : 'bg-featureGradient'
                         } px-3 tablet:px-8 text-center hover:bg-featureGradientHover2`}
                       >
-                        <Disclosure.Button className="flex min-h-[30px] xl:min-h-[72px] w-full items-center justify-between rounded-lg focus:outline-none  ">
+                        <Disclosure.Button className="flex min-h-[30px] tablet:min-h-[47px] xl:min-h-[72px] w-full items-center justify-between rounded-lg focus:outline-none  ">
                           <Paragraph className="font-bold text-white text-3.75 tablet:text-5 xl:text-content">
                             Q{`${index + 1}`}
                           </Paragraph>

@@ -9,7 +9,7 @@ import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 
 export const HowtoOwileSection = () => {
   return (
-    <Section className="mx-auto mt-[86px] tablet:mt-36 xl:mt-40 max-w-[1240px] px-5 text-center">
+    <Section className="mx-auto mt-[86px] tablet:mt-36 xl:mt-40 max-w-[500px] tablet:max-w-[900px] xl:max-w-[1240px] px-5 text-center">
       <AnimateWrapper xOffset={-150} delayOrder={.5} animateType={AnimateType.SLIDEIN}>
         <Heading className="text-center text-white text-headingMobile tablet:text-8 xl:text-heading">
           How to Get an Owlie
@@ -28,7 +28,7 @@ export const HowtoOwileSection = () => {
               className="mx-auto h-45 xl:h-[268px] w-full max-w-[180px] xl:max-w-[268px] cursor-pointer rounded-[20px] bg-featureWrapperGradient p-1 hover:bg-featureWrapperGradient2"
             >
               <div className="flex flex-col justify-between h-full text-white bg-black rounded-2xl">
-                <div className="flex h-full w-full items-center justify-center rounded-lg bg-featureGradient px-[22px] pt-[18px] pb-3 text-center hover:bg-featureGradientHover">
+                <div className="flex h-full w-full items-center justify-center rounded-[16px] bg-featureGradient px-[22px] pt-[18px] pb-3 text-center hover:bg-featureGradientHover">
                   <img src={method.img} className="mx-auto" alt="" />
                 </div>
               </div>
@@ -55,7 +55,7 @@ export const HowtoOwileSection = () => {
               className="mx-auto h-45 xl:h-[268px] w-full max-w-[180px] xl:max-w-[268px] cursor-pointer rounded-[20px] bg-featureWrapperGradient p-1 hover:bg-featureWrapperGradient2"
             >
               <div className="flex flex-col justify-between h-full text-white bg-black rounded-2xl">
-                <div className="flex h-full w-full items-center justify-center rounded-lg bg-featureGradient px-[22px] pt-[18px] pb-3 text-center hover:bg-featureGradientHover">
+                <div className="flex h-full w-full items-center justify-center rounded-[16px] bg-featureGradient px-[22px] pt-[18px] pb-3 text-center hover:bg-featureGradientHover">
                   <img src={method.img} className="mx-auto" alt="" />
                 </div>
               </div>
