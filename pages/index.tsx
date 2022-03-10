@@ -66,10 +66,10 @@ const Home: NextPage = () => {
         {/* <Header /> */}
         {/* Banner Section */}
         <Section className='relative xl:h-screen'>
-          <div className="relative min-h-[175px] tablet:min-h-[389px] xl:min-h-[600px] xln:min-h-[670px] xxln:min-h-[710px] xxl:min-h-[768px] 3xl:min-h-[840px] overflow-hidden pb-[1px]">
+          <div className="relative min-h-[175px] tablet:min-h-[389px] lg:min-h-[540px] xl:min-h-[600px] xln:min-h-[670px] xxln:min-h-[710px] xxl:min-h-[768px] 3xl:min-h-[840px] overflow-hidden pb-[1px]">
             <video
               src="/5th-dimension-banner.mp4"
-              className="fixed w-full object-cover max-h-[175px] tablet:max-h-[389px] xl:max-h-[600px] xln:max-h-[670px] xxln:max-h-[710px] xxl:max-h-[768px] 3xl:max-h-[840px]"
+              className="fixed w-full object-cover max-h-[175px] tablet:max-h-[389px] lg:max-h-[540px] xl:max-h-[600px] xln:max-h-[670px] xxln:max-h-[710px] xxl:max-h-[768px] 3xl:max-h-[840px]"
               autoPlay={true}
               loop
               playsInline

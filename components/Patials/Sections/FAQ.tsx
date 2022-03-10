@@ -44,13 +44,13 @@ export const FAQSection = () => {
                           <Paragraph className="font-bold text-white text-3.75 tablet:text-5 xl:text-content">
                             Q{`${index + 1}`}
                           </Paragraph>
-                          <Paragraph className="font-normal text-white text-3 tablet:text-4 xl:text-contentSmall">
+                          <Paragraph className="flex-1 pl-3 font-normal text-left text-white text-3 tablet:text-4 xl:text-contentSmall">
                             {item.question}
                           </Paragraph>
                           <img src='/Icons/IArrowdown.svg' className='w-[10px] tablet:w-[21px]' />
                         </Disclosure.Button>
                         <Disclosure.Panel className="px-3 pb-5 tablet:px-8">
-                          <Paragraph className="font-normal text-3 tablet:text-4 xl:text-contentSmall text-primary">
+                          <Paragraph className="font-normal text-left text-3 tablet:text-4 xl:text-contentSmall text-primary">
                             <span className="block mb-2">
                               {parse(item.answer)}
                             </span>

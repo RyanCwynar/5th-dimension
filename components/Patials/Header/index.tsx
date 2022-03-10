@@ -140,12 +140,12 @@ function Header() {
               <div className="items-center justify-center hidden lg:flex">
                 <a href="#" className="social-link">
                   <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
-                    <img src="/Icons/IDiscord.png" className="mr-2" alt="" />
+                    <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
                   </AnimateWrapper>
                 </a>
                 <a href="#" className="social-link">
                   <AnimateWrapper xOffset={-100} delayOrder={4.5} animateType={AnimateType.SLIDEIN}>
-                    <img src="/Icons/ITwitter.png" className="ml-2" alt="" />
+                    <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
                   </AnimateWrapper>
                 </a>
               </div>
@@ -189,12 +189,12 @@ function Header() {
               <div className="flex items-center justify-center lg:hidden mt-[47px] lg:mt-[87px]">
                 <a href="#" className="social-link">
                   {/* <SlideIn xOffset={-100} delayOrder={4}> */}
-                    <img src="/Icons/IDiscord.png" className="mr-2" alt="" />
+                    <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
                   {/* </SlideIn> */}
                 </a>
                 <a href="#" className="social-link">
                   {/* <SlideIn xOffset={-100} delayOrder={4.5}> */}
-                    <img src="/Icons/ITwitter.png" className="ml-2" alt="" />
+                    <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
                   {/* </SlideIn> */}
                 </a>
               </div>

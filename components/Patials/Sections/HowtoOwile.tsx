@@ -29,7 +29,9 @@ export const HowtoOwileSection = () => {
             >
               <div className="flex flex-col justify-between h-full text-white bg-black rounded-2xl">
                 <div className="flex h-full w-full items-center justify-center rounded-[16px] bg-featureGradient px-[22px] pt-[18px] pb-3 text-center hover:bg-featureGradientHover">
-                  <img src={method.img} className="mx-auto" alt="" />
+                  <div className='max-w-[150px] max-h-[150px] mx-auto flex h-full flex-col justify-center'>
+                    <img src={method.img} className="mx-auto" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
