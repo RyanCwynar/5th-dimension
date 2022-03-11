@@ -51,7 +51,7 @@ export const FAQSection = () => {
                         </Disclosure.Button>
                         <Disclosure.Panel className="px-3 pb-5 tablet:px-8">
                           <Paragraph className="font-normal text-left text-3 tablet:text-4 xl:text-contentSmall text-primary">
-                            <span className="block mb-2">
+                            <span className="block mb-2 faq-content">
                               {parse(item.answer)}
                             </span>
                             {

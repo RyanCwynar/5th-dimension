@@ -76,7 +76,7 @@ export const teamData = [
     name: 'Quinn Quibbleton',
     role: 'Founder / Project Manager',
     description:
-      'My passion has always been writing stories and creating music, but it was difficult to balance these activities with my career as a pharmacist. Being aware that many others also struggle with this same problem, I was determined to figure out a path to success that will work for everyone. The 5th Dimension community is being built for this exact purpose – to enable creatives to prosper.',
+      'My passion has always been writing stories and creating music, but it was difficult to balance these activities with my career as a pharmacist. Being aware that many others also struggle with this same problem, I was determined to figure out a path to success that will work for everyone. The 5th Dimension community is being built for this exact purpose - to enable creatives to prosper.',
     profileImg: '/team_01.png',
   },
   {
@@ -90,14 +90,14 @@ export const teamData = [
     name: 'Fianzilla',
     role: 'Artist',
     description:
-      'I’m an award-winning artist/illustrator who has worked for many Fortune-500 companies including Miller Brewing Company, Disney and Pepsi just to name a few. I am currently the artist and creative architect here in the 5th dimension, bringing my imagination to life one piece of art at a time.',
+      'I\'m an award-winning artist/illustrator who has worked for many Fortune-500 companies including Miller Brewing Company, Disney and Pepsi just to name a few. I am currently the artist and creative architect here in the 5th dimension, bringing my imagination to life one piece of art at a time.',
     profileImg: '/team_02.png',
   },
   {
     name: 'Ralf Wiggim',
     role: 'UX / Community Manager',
     description:
-      'Hey there! I’m a UI/UX designer with prior experience working with the AthleteX DAO (athletex.io). Now, I am focused on creating 5th Dimensional user experiences.',
+      'Hey there! I\'m a UI/UX designer with prior experience working with the AthleteX DAO (athletex.io). Now, I am focused on creating 5th Dimensional user experiences.',
     profileImg: '/team_04.png',
   },
 ]
@@ -155,7 +155,7 @@ export const faqData = [
   {
     question: 'Where is the best place to find more info?',
     answer:
-      'In our <a href="https://discord.gg/BW4XKRhyHs" className="underline" target="_blank">Discord</a> . Ask us anything and our mods will answer you as quickly as possible. Also, feel free to browse our server and learn more about our project. You can also stay up to date by following our <a href="https://twitter.com/5thDimension_io" className="underline" target="_blank">Twitter</a> and <a href="https://medium.com/@5thDimension_io" className="underline" target="_blank">Medium</a> accounts.',
+      'In our <a href="https://discord.gg/BW4XKRhyHs" class="underline" target="_blank">Discord</a> . Ask us anything and our mods will answer you as quickly as possible. Also, feel free to browse our server and learn more about our project. You can also stay up to date by following our <a href="https://twitter.com/5thDimension_io" class="underline" target="_blank">Twitter</a> and <a href="https://medium.com/@5thDimension_io" class="underline" target="_blank">Medium</a> accounts.',
   },
   {
     question: 'What blockchain is it on?',

@@ -61,3 +61,11 @@ li::marker {
 .social-link:hover img {
   filter: brightness(1.4);
 }
+
+.faq-content a {
+  @apply underline
+}
+
+.my-anchor-css-class {
+  @apply text-3 tablet:text-3.75 pl-2 block
+}

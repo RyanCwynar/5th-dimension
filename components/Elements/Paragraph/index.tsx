@@ -5,10 +5,10 @@ interface ParagraphProps {
   children?: ReactNode
 }
 
-const Paragraph = ({ className, children }: ParagraphProps) => {
+const Paragraph = ({ className, children, ...rest }: ParagraphProps) => {
   return (
     <>
-      <p className={`font-RedHat ${className}`}>{children}</p>
+      <p className={`font-RedHat ${className}`} {...rest}>{children}</p>
     </>
   )
 }

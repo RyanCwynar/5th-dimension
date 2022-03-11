@@ -5,7 +5,10 @@ import Paragraph from '../../Elements/Paragraph'
 import Section from '../../Layouts/Section'
 import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 
+import ShowMoreText from 'react-show-more-text'
+
 export const TeamSection = () => {
+
   return (
     <Section
       className="mx-auto mt-[90px] tablet:mt-[155.44px] xl:mt-[266px] max-w-[690px] xl:max-w-[875px] px-4"
@@ -33,7 +36,9 @@ export const TeamSection = () => {
                   {team.role}
                 </Paragraph>
                 <Paragraph className="mt-[10px] xl:mt-2 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-primary">
-                  {team.description}
+                  <ShowMoreText more="Show More" less="Show Less" anchorClass="my-anchor-css-class" >
+                    {team.description}
+                  </ShowMoreText>
                 </Paragraph>
               </AnimateWrapper>
             </div>
