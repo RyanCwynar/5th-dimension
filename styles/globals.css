@@ -67,5 +67,5 @@ li::marker {
 }
 
 .my-anchor-css-class {
-  @apply text-3 tablet:text-3.75 pl-2 block
+  @apply text-3 tablet:text-3.75 pl-2 block text-white text-opacity-50 pt-[2px]
 }
