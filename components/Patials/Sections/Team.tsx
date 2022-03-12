@@ -37,11 +37,11 @@ export const TeamSection = () => {
                 <Paragraph className="mt-[10px] xl:mt-2 font-semibold text-white text-3 tablet:text-4.5 xl:text-contentSmall">
                   {team.role}
                 </Paragraph>
-                <Paragraph className="mt-[10px] xl:mt-2 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-primary">
+                <div className='font-RedHat mt-[10px] xl:mt-2 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-primary'>
                   <ShowMoreText more="Show More" less="Show Less" anchorClass="my-anchor-css-class" >
                     {team.description}
                   </ShowMoreText>
-                </Paragraph>
+                </div>
               </AnimateWrapper>
             </div>
           ))}

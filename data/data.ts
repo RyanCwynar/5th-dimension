@@ -1,12 +1,12 @@
 export const nftData = ['/T-Bone_9_1.png', '/T-Bone_8_1.png', '/T-Bone_7_1.png']
 
 export const featureData = [
-  { img: '/Icons/body.svg', featureTitle: 'Body' },
-  { img: '/Icons/sun-glasses.svg', featureTitle: 'Face' },
-  { img: '/Icons/cowboy-hat.svg', featureTitle: 'Head' },
-  { img: '/Icons/sword.svg', featureTitle: 'Accessory' },
-  { img: '/Icons/tshirt.svg', featureTitle: 'Clothes' },
-  { img: '/Icons/wallpaper.svg', featureTitle: 'Background' },
+  { img: '/Icons/body.svg', featureTitle: 'Body', type: 'body', quantity: 5 },
+  { img: '/Icons/sun-glasses.svg', featureTitle: 'Face', type: 'face', quantity: 7 },
+  { img: '/Icons/cowboy-hat.svg', featureTitle: 'Head', type: 'head', quantity: 7 },
+  { img: '/Icons/sword.svg', featureTitle: 'Accessory', type: 'accessory', quantity: 7 },
+  { img: '/Icons/tshirt.svg', featureTitle: 'Clothes', type: 'clothes', quantity: 7 },
+  { img: '/Icons/wallpaper.svg', featureTitle: 'Background', type: 'background', quantity: 5 },
 ]
 
 export const methodData = [

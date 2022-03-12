@@ -44,10 +44,6 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    console.log(isMobile)
-  }, [isMobile])
-
-  useEffect(() => {
     window.onresize = resizeHanlder;
     if ( window.innerWidth <=600 )
       setIsMobile(true)
