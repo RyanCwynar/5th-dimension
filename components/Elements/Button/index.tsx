@@ -1,13 +1,12 @@
-import React, { ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import { ButtonSize } from '../../../types/types'
 
-import styles from '../../../styles/components/button.module.css'
-
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   children: string | ReactNode
   size?: ButtonSize
   outline?: boolean
+  rest?: Record<string, any>
 }
 
 const Button = ({
@@ -15,6 +14,7 @@ const Button = ({
   children,
   size = ButtonSize.PRIMARY,
   outline = false,
+  ...rest
 }: ButtonProps) => {
   const baseClassName =
     size === ButtonSize.PRIMARY
@@ -24,9 +24,9 @@ const Button = ({
       : `max-w-[64px] xl:max-w-[90px] font-semibold`
 
   return (
-    <>
       <button
         className={`${className} w-full rounded-[20px] font-RedHat transition-all duration-1000 ${baseClassName}`}
+        {...rest}
       >
         {!outline ? (
           children
@@ -42,7 +42,6 @@ const Button = ({
           </>
         )}
       </button>
-    </>
   )
 }
 
