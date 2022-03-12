@@ -62,21 +62,21 @@ const Home: NextPage = () => {
         {/* <Header /> */}
         {/* Banner Section */}
         <Section className='relative xl:h-screen'>
-          <div className="relative min-h-[175px] tablet:min-h-[389px] lg:min-h-[540px] xl:min-h-[600px] xln:min-h-[670px] xxln:min-h-[710px] xxl:min-h-[768px] 3xl:min-h-[840px] overflow-hidden pb-[1px]">
+          <div className="relative min-h-[182px] tablet:min-h-[389px] lg:min-h-[540px] xl:min-h-[600px] xln:min-h-[670px] xxln:min-h-[710px] xxl:min-h-[768px] 3xl:min-h-[840px] overflow-hidden pb-[1px]">
             <video
               src="/5th-dimension-banner.mp4"
-              className="fixed w-full object-cover max-h-[175px] tablet:max-h-[389px] lg:max-h-[540px] xl:max-h-[600px] xln:max-h-[670px] xxln:max-h-[710px] xxl:max-h-[768px] 3xl:max-h-[840px]"
+              className="fixed w-full object-cover max-h-[182px] tablet:max-h-[389px] lg:max-h-[540px] xl:max-h-[600px] xln:max-h-[670px] xxln:max-h-[710px] xxl:max-h-[768px] 3xl:max-h-[840px]"
               autoPlay={true}
               loop
               playsInline
               muted
             ></video>
-            <div className='absolute bottom-0 w-full h-5 bg-bannerGradientMobile tablet:hidden'></div>
+            <div className='absolute w-full h-5 -bottom-1 bg-bannerGradientMobile tablet:hidden'></div>
           </div>
           {/* <div className="relative pb-1 mt-0 bg-bannerGradientBlack tablet:-mt-24 xl:-mt-24 xln:-mt-48 xxln:-mt-60 xxl:-mt-72 tablet:bg-bannerGradientTablet xl:bg-bannerGradient"> */}
           <div className="relative bottom-0 z-20 w-full pb-1 mt-0 xl:absolute bg-bannerGradientBlack tablet:-mt-24 xl:-mt-24 xln:-mt-48 xxln:-mt-60 xxl:-mt-72 tablet:bg-bannerGradientTablet xl:bg-bannerGradient">
             <div className="w-full pl-6 banner-content-wrapper pr-9">
-              <div className="mx-auto max-w-[1440px]">
+              <div className="tablet:mt-0 mx-auto max-w-[1440px]">
                 <div className="grid grid-cols-1 tablet:grid-cols-2 items-center gap-6 tablet:gap-10 xl:gap-[78px]">
                   <div>
                     <div className="flex items-center justify-center tablet:justify-end">

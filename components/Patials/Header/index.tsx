@@ -157,7 +157,7 @@ function Header() {
                 aria-expanded="false"
               >
                 <span className="sr-only">Open main menu</span>
-                {!isOpen ? <img src='/Icons/IOpen.svg' className='w-[18px] tablet:w-[24px]' /> : ""}
+                {!isOpen ? <img src='/Icons/IOpen.svg' className='w-[24px]' /> : ""}
               </button>
             </div>
           </div>
