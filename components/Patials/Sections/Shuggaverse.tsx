@@ -36,7 +36,7 @@ export const ShuggaverseSection = () => {
         <div className="tablet:pl-7 xl:pl-[67px] mt-6 tablet:mt-0">
           <AnimateWrapper xOffset={-100} delayOrder={1.5} className="hidden text-right tablet:block" animateType={AnimateType.SLIDEIN}> {/** Slide right to left on mobile for first item only */}
             <img src="/Shuggaverse_01.png" alt="" />
-            <Paragraph className="mt-[2px] text-3 xl:text-buttonSmall italic text-primary">
+            <Paragraph className="mt-[2px] text-[10px] tablet:text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>
             <Paragraph className="block mt-4 text-left text-4 xl:text-contentSmall text-primary tablet:hidden">
@@ -58,7 +58,7 @@ export const ShuggaverseSection = () => {
           </AnimateWrapper>
           <AnimateWrapper xOffset={100} delayOrder={1.5} className="block text-right tablet:hidden" animateType={AnimateType.SLIDEIN}> {/** Slide right to left on mobile for first item only */}
             <img src="/Shuggaverse_01.png" alt="" />
-            <Paragraph className="mt-[2px] text-3 xl:text-buttonSmall italic text-primary">
+            <Paragraph className="mt-[2px] text-[10px] tablet:text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>
             <Paragraph className="mt-[14px] text-left tablet:mt-9 xl:mt-[29px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">

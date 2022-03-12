@@ -62,7 +62,7 @@ export const HowtoOwileSection = () => {
                 </div>
               </div>
             </div>
-            <Paragraph className="mt-5 tablet:mt-9 mb-[10px] xl:mt-[29px] xl:mb-[30px] text-center text-3.75 tablet:text-5 xl:text-content font-bold text-white">
+            <Paragraph className="mt-5 tablet:mt-9 mb-[10px] xl:mt-[29px] xl:mb-[30px] text-center text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
               {method.title}
             </Paragraph>
             <Paragraph className="mx-auto tablet:max-w-[342px] text-center text-3 tablet:text-4 xl:text-contentSmall text-primary max-w-[230px]">

@@ -6,9 +6,14 @@ import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 export const OwileNFTSection = () => {
   return (
     <Section
-      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-5 tablet:pt-16"
+      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-14 tablet:pt-16"
       navigateID="topSection"
     >
+      <AnimateWrapper xOffset={-100} delayOrder={1} className="block tablet:hidden" animateType={AnimateType.SLIDEIN}>
+        <Heading className="text-center text-white text-headingMobile tablet:text-8 xl:text-heading">
+          Your Owlie Gives You...
+        </Heading>
+      </AnimateWrapper>
       <div className="flex flex-col-reverse items-center w-full tablet:flex-row">
         <div className="w-full max-w-[770px] tablet:pr-12">
           <AnimateWrapper xOffset={-100} delayOrder={1} className="hidden tablet:block" animateType={AnimateType.SLIDEIN}>
@@ -17,7 +22,7 @@ export const OwileNFTSection = () => {
             </Heading>
           </AnimateWrapper>
           <AnimateWrapper yOffset={0} delayOrder={2} animateType={AnimateType.FADEIN}>
-            <ul className="mt-7 xl:mt-[31px] pl-6 list-disc text-3 tablet:text-4 xl:text-headingMobile font-RedHat text-primary max-w-[500px] tablet:max-w-none mx-auto">
+            <ul className="mt-[25px] tablet:mt-7 xl:mt-[31px] pl-6 list-disc text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary max-w-[334px] tablet:max-w-[500px] xl:max-w-none mx-auto">
               <li>WL spots for community and partner projects.</li>
               <li>Free future 5th Dimension NFTs.</li>
               <li>Free digital copy of “Birth of the Shugga” comic book album</li>
@@ -27,7 +32,7 @@ export const OwileNFTSection = () => {
             </ul>
           </AnimateWrapper>
         </div>
-        <div className="flex-grow mt-[25px] tablet:mt-0">
+        <div className="flex-grow">
           <AnimateWrapper xOffset={100} delayOrder={1.5} animateType={AnimateType.SLIDEIN}>
             <img src="/T-Bone_golden.png" className="mx-auto max-w-[110px] tablet:max-w-[220px] xl:max-w-[400px]" />
           </AnimateWrapper>

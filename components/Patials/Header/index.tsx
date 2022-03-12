@@ -163,41 +163,41 @@ function Header() {
           </div>
         </div>
 
-        <div className={`fixed top-0 left-0 z-50 w-full h-screen mobile-header lg:hidden bg-black bg-opacity-50 ${isOpen ? 'block' : 'hidden'}`}>
-          <div className="bg-headerGradient w-[300px] tablet:w-[500px] h-full ml-auto relative">
-            <img src="/Icons/IClose.svg" className='w-[18px] tablet:w-[24px] absolute top-3 right-5 tablet:top-8 tablet:right-9' onClick={() => setIsOpen(false)} alt="" />
-            <div className="flex flex-col items-center justify-center h-full space-x-2">
-              {routes.map((route, index) => (
-                // <SlideIn
-                //   xOffset={-100}
-                //   delayOrder={1.5 + index * 0.5}
-                //   key={index}
-                // >
-                  <Link
-                    to={route.to}
-                    smooth={true}
-                    offset={0}
-                    duration={500}
-                    onClick={() => setIsOpen(false)}
-                    className={`${route.className} mb-5 lg:mb-[50px]`}
-                    key={index}
-                  >
-                    {route.title}
-                  </Link>
-                // </SlideIn>
-              ))}
-              <div className="flex items-center justify-center lg:hidden mt-[47px] lg:mt-[87px]">
-                <a href="#" className="social-link">
-                  {/* <SlideIn xOffset={-100} delayOrder={4}> */}
-                    <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
-                  {/* </SlideIn> */}
-                </a>
-                <a href="#" className="social-link">
-                  {/* <SlideIn xOffset={-100} delayOrder={4.5}> */}
-                    <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
-                  {/* </SlideIn> */}
-                </a>
-              </div>
+        <div className={`fixed top-0 z-40 w-full h-screen mobile-header lg:hidden bg-black bg-opacity-50 ${!isOpen ? '-left-full' : 'left-0'}`}>
+        </div>
+        <div className={`bg-headerGradient fixed top-0 z-50 w-[300px] lg:hidden tablet:w-[500px] transition-all duration-500 h-full ml-auto ${!isOpen ? '-right-full' : 'right-0'}`}>
+          <img src="/Icons/IClose.svg" className='w-[18px] tablet:w-[24px] absolute top-3 right-5 tablet:top-8 tablet:right-9' onClick={() => setIsOpen(false)} alt="" />
+          <div className="flex flex-col items-center justify-center h-full space-x-2">
+            {routes.map((route, index) => (
+              // <SlideIn
+              //   xOffset={-100}
+              //   delayOrder={1.5 + index * 0.5}
+              //   key={index}
+              // >
+                <Link
+                  to={route.to}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => setIsOpen(false)}
+                  className={`${route.className} mb-5 lg:mb-[50px]`}
+                  key={index}
+                >
+                  {route.title}
+                </Link>
+              // </SlideIn>
+            ))}
+            <div className="flex items-center justify-center lg:hidden mt-[47px] lg:mt-[87px]">
+              <a href="#" className="social-link">
+                {/* <SlideIn xOffset={-100} delayOrder={4}> */}
+                  <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
+                {/* </SlideIn> */}
+              </a>
+              <a href="#" className="social-link">
+                {/* <SlideIn xOffset={-100} delayOrder={4.5}> */}
+                  <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
+                {/* </SlideIn> */}
+              </a>
             </div>
           </div>
         </div>
