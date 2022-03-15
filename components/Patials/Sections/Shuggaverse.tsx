@@ -35,29 +35,19 @@ export const ShuggaverseSection = () => {
         </div>
         <div className="tablet:pl-7 xl:pl-[67px] mt-6 tablet:mt-0">
           <AnimateWrapper xOffset={-100} delayOrder={1.5} className="hidden text-right tablet:block" animateType={AnimateType.SLIDEIN}> {/** Slide right to left on mobile for first item only */}
-            <img src="/Shuggaverse_01.png" alt="" />
+            <img src="/Shuggaverse_01.png" className='rounded-[20px]' alt="" />
             <Paragraph className="mt-[2px] text-[10px] tablet:text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>
             <Paragraph className="block mt-4 text-left text-4 xl:text-contentSmall text-primary tablet:hidden">
-              Shugga’s Owlie Friends are part of the Shuggaverse, the
-              first world being created within the 5 th Dimension. This is
-              the home of Shugga, the anti-establishment superhero
-              dedicated to destroying inter-dimensional Ghouls and
-              stopping Da Man’s fiat money empire. 
-              <span className="inline-block mt-[9px] xl:mt-[11px]">
-                Several decades ago,
-                Shugga retreated from our dimension when the world closed
-                their hearts and replaced peace, love, and understanding
-                with fear, uncertainty, and doubt. Unable to penetrate the
-                hardened hearts of the people of Earth, he has instead been
-                taking the fight directly to the Ghouls in the 5 th
-                Dimension, trying to break their influence over humanity.
+              The Owlies are part of the Shuggaverse, the first world being created within the 5th Dimension multiverse. The Shuggaverse is the home of comic book albums – a new genre of entertainment that combines art and stories with original music soundtracks.
+              <span className="inline-block mt-[9px] xl:mt-[13px]">
+                Later this year, we will release our first comic book album, “Birth of the Shugga” –  origin story of anti-establishment superhero, Shugga, who is dedicated to destroying inter-dimensional Ghouls and stopping Da Man’s fiat money empire. All Owlies will receive a free digital copy!
               </span>
             </Paragraph>
           </AnimateWrapper>
           <AnimateWrapper xOffset={100} delayOrder={1.5} className="block text-right tablet:hidden" animateType={AnimateType.SLIDEIN}> {/** Slide right to left on mobile for first item only */}
-            <img src="/Shuggaverse_01.png" alt="" />
+            <img src="/Shuggaverse_01.png" className='rounded-[20px]' alt="" />
             <Paragraph className="mt-[2px] text-[10px] tablet:text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>
@@ -69,7 +59,7 @@ export const ShuggaverseSection = () => {
             </Paragraph>
           </AnimateWrapper>
           <AnimateWrapper xOffset={-100} delayOrder={2} className="text-right" animateType={AnimateType.SLIDEIN}>
-            <img src="/Shuggaverse_02.png" className="mt-6 xl:mt-11" alt="" />
+            <img src="/Shuggaverse_02.png" className="mt-6 xl:mt-11 rounded-[20px]" alt="" />
             <Paragraph className="mt-[2px] text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>

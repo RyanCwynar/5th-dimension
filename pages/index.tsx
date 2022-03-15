@@ -61,7 +61,7 @@ const Home: NextPage = () => {
       <Layout className="relative">
         {/* <Header /> */}
         {/* Banner Section */}
-        <Section className='relative xl:h-screen'>
+        <Section className='relative xl:h-screen max-h-[840px]'>
           <div className="relative min-h-[182px] tablet:min-h-[389px] lg:min-h-[540px] xl:min-h-[600px] xln:min-h-[670px] xxln:min-h-[710px] xxl:min-h-[768px] 3xl:min-h-[840px] overflow-hidden pb-[1px]">
             <video
               src="/5th-dimension-banner.mp4"

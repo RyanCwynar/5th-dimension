@@ -152,7 +152,7 @@ function Header() {
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md outline-none lg:hidden"
+                className="fixed inline-flex items-center justify-center p-2 rounded-md outline-none lg:hidden"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >

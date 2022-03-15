@@ -31,13 +31,13 @@ export const TeamSection = () => {
                     alt=""
                   />
                 </div>
-                <Paragraph className="font-bold text-white mt-[18px] xl:mt-7 text-3.75 tablet:text-5 xl:text-content">
-                  {team.name}
+                <Paragraph className="font-bold text-white mt-[18px] xl:mt-7 text-3.75 tablet:text-5 xl:text-content font-RedHatBold flex items-center justify-center">
+                  {team.name} <a href={team.link} rel="noreferrer" className='ml-3' target={`_blank`}><img src={team.icon} className="w-10 cursor-pointer" alt="" /></a>
                 </Paragraph>
                 <Paragraph className="mt-[10px] xl:mt-2 font-semibold text-white text-3 tablet:text-4.5 xl:text-contentSmall">
                   {team.role}
                 </Paragraph>
-                <div className='font-RedHat mt-[10px] xl:mt-2 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-primary'>
+                <div className='font-RedHat mt-[10px] xl:mt-2 font-normal text-3 tablet:text-4.5 xl:text-contentSmall text-left text-primary'>
                   <ShowMoreText more="Show More" less="Show Less" anchorClass="my-anchor-css-class" >
                     {team.description}
                   </ShowMoreText>

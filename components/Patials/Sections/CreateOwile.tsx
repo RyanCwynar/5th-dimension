@@ -21,12 +21,12 @@ interface OperationHistoryType {
 export const CreateOwileSection = () => {
   const [ operationHistory, setOperationHistory ] = useState<OperationHistoryType[]>([
     {
-      background: 1,
-      body: 1,
-      clothes: 1,
-      face: 1,
-      head: 1,
-      accessory: 1,
+      background: 3,
+      body: 3,
+      clothes: 2,
+      face: 2,
+      head: 2,
+      accessory: 2,
     }
   ])
   

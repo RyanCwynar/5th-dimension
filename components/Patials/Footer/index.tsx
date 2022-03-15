@@ -29,6 +29,11 @@ const Footer = () => {
             <img src="/Icons/ITwitter.png" className="ml-2 w-7 xl:w-11" alt="" />
           </AnimateWrapper>
         </a>
+        <a href="#" className="social-link">
+          <AnimateWrapper yOffset={50} delayOrder={3.5} animateType={AnimateType.FADEIN}>
+            <img src="/Icons/IMedium.png" className="ml-2 w-7 xl:w-11" alt="" />
+          </AnimateWrapper>
+        </a>
       </div>
     </Section>
   )
