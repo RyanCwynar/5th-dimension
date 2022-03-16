@@ -20,7 +20,7 @@ export const RoadmapSection = () => {
         {roadmapData.map((roadmap, index) => (
           <div className="roadmap-item mt-[14px] xl:mt-7" key={index}>
             <div
-              className={`flex w-full ${
+              className={`flex w-full max-h-[222px] xl:max-h-[350px] ${
                 index % 2 === 0 ? '' : 'flex-row-reverse'
               }`}
             >
