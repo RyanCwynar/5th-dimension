@@ -73,8 +73,8 @@ export const roadmapData = [
 export const teamData = [
   {
     name: 'Quinn Quibbleton',
-    icon: "/Icons/ILinkedin-team.png",
-    link: "",
+    icon: "/Icons/ITwitter-team.png",
+    link: "https://twitter.com/QuinnQuibbleton ",
     role: 'Founder / Project Manager',
     description:
       'My passion has always been writing stories and creating music, but it was difficult to balance these activities with my career as a pharmacist. Being aware that many others also struggle with this same problem, I was determined to figure out a path to success that will work for everyone. The 5th Dimension community is being built for this exact purpose - to enable creatives to prosper.',
@@ -83,7 +83,7 @@ export const teamData = [
   {
     name: 'Fianzilla',
     icon: "/Icons/IGeography-team.png",
-    link: "",
+    link: "https://fian.com/ ",
     role: 'Artist',
     description:
       'I\'m an award-winning artist/illustrator who has worked for many Fortune-500 companies including Miller Brewing Company, Disney and Pepsi just to name a few. I am currently the artist and creative architect here in the 5th dimension, bringing my imagination to life one piece of art at a time.',
@@ -92,7 +92,7 @@ export const teamData = [
   {
     name: 'Akbar Lightning',
     icon: "/Icons/IGeography-team.png",
-    link: "",
+    link: "http://kenvallario.com/",
     role: 'Philosopher',
     description:
       'As a professional artist and educator for 25 years I have perpetually sought out the Renaissance experience. In the metaverse I see the potential for a philosophical explosion that will give rise to new freedoms and human wonders of the world.',
@@ -101,7 +101,7 @@ export const teamData = [
   {
     name: 'Ralf Wiggim',
     icon: "/Icons/ITwitter-team.png",
-    link: "",
+    link: "https://twitter.com/ralf_wiggim",
     role: 'UX / Community Manager',
     description:
       'Hey there! I\'m a UI/UX designer with prior experience working with the AthleteX DAO (athletex.io). Now, I am focused on creating 5th Dimensional user experiences.',

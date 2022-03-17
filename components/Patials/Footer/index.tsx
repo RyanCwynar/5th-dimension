@@ -19,17 +19,17 @@ const Footer = () => {
         </Button>
       </AnimateWrapper>
       <div className="flex items-center justify-center mt-6 xl:mt-9">
-        <a href="#" className="social-link">
+        <a href="https://discord.gg/BW4XKRhyHs" className="social-link">
           <AnimateWrapper yOffset={50} delayOrder={2.5} animateType={AnimateType.FADEIN}>
             <img src="/Icons/IDiscord.png" className="mr-2 w-7 xl:w-11" alt="" />
           </AnimateWrapper>
         </a>
-        <a href="#" className="social-link">
+        <a href="https://twitter.com/5thDimension_io " className="social-link">
           <AnimateWrapper yOffset={50} delayOrder={3} animateType={AnimateType.FADEIN}>
             <img src="/Icons/ITwitter.png" className="ml-2 w-7 xl:w-11" alt="" />
           </AnimateWrapper>
         </a>
-        <a href="#" className="social-link">
+        <a href="https://medium.com/@5thDimension_io " className="social-link">
           <AnimateWrapper yOffset={50} delayOrder={3.5} animateType={AnimateType.FADEIN}>
             <img src="/Icons/IMedium.png" className="ml-2 w-7 xl:w-11" alt="" />
           </AnimateWrapper>
