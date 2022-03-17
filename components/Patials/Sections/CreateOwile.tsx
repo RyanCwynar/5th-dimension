@@ -49,7 +49,7 @@ export const CreateOwileSection = () => {
   }
 
   return (
-    <Section className="mx-auto mt-[89px] tablet:mt-[133px] max-w-[500px] tablet:max-w-[900px] xl:max-w-[1120px] px-6 tablet:px-[45px] xl:px-[55px]">
+    <Section className="mx-auto mt-[89px] tablet:mt-[133px] max-w-[500px] tablet:max-w-[900px] xl:max-w-[1140px] px-6 tablet:px-[45px] xl:px-[55px]">
       <AnimateWrapper xOffset={-100} delayOrder={1} animateType={AnimateType.SLIDEIN}>
         <Heading className="block text-center text-white text-headingMobile tablet:hidden">
           Create Your Owlie
