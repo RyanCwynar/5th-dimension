@@ -101,7 +101,7 @@ const Home: NextPage = () => {
                       </Paragraph>
                     </AnimateWrapper>
                     <AnimateWrapper delayOrder={2} yOffset={40} className="text-center tablet:text-left" animateType={AnimateType.FADEIN}>
-                      <Button size={ButtonSize.PRIMARY} className="xl:mt-[34px] tablet:mt-7 mt-[30px] mx-auto">
+                      <Button size={ButtonSize.PRIMARY} className="xl:mt-[34px] tablet:mt-7 mt-[30px] mx-auto" onClick={() => window.open('https://discord.gg/BW4XKRhyHs', '_blank')}>
                         <span className="flex items-center justify-start ml-2">
                           <img src="/Icons/IDiscord-white.svg" className="mr-[14px] w-7 xl:w-[38px]" alt="" />
                           Join Discord

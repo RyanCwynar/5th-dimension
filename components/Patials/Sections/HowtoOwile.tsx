@@ -72,7 +72,7 @@ export const HowtoOwileSection = () => {
         ))}
       </div>
       <AnimateWrapper yOffset={0} delayOrder={3} animateType={AnimateType.FADEIN}>
-        <Button size={ButtonSize.PRIMARY} className="mt-10 xl:mt-[72px]">
+        <Button size={ButtonSize.PRIMARY} className="mt-10 xl:mt-[72px]" onClick={() => window.open('https://discord.gg/BW4XKRhyHs', '_blank')}>
           <span className="flex items-center justify-start ml-2">
             <img src="/Icons/IDiscord-white.svg" className="mr-[14px] w-7 xl:w-[38px]" alt="" />
             Join Discord
