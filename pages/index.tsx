@@ -27,7 +27,8 @@ import {
   RoadmapSection,
   ShuggaverseSection,
   FAQSection,
-  TeamSection
+  TeamSection,
+  Hooareyou
 } from '../components/Patials/Sections'
 import Footer from '../components/Patials/Footer'
 
@@ -131,6 +132,8 @@ const Home: NextPage = () => {
           </div>
         </Section>
         <Section className="relative z-30 -mt-1 bg-contentGradient">
+
+          <Hooareyou />
 
           <OwileNFTSection />
 

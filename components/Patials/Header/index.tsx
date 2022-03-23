@@ -104,8 +104,8 @@ function Header() {
               <a href="/">
                 <AnimateWrapper animateType={AnimateType.SLIDEIN} xOffset={-100} delayOrder={1}>
                   <img
-                    className="max-w-[127px] tablet:max-w-[253px]"
-                    src="/5th-dimension-logo.png"
+                    className="max-w-[127px] tablet:max-w-[308px]"
+                    src="/5th-logo.png"
                     alt="Workflow"
                   />
                 </AnimateWrapper>

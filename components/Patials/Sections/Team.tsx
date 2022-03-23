@@ -6,6 +6,7 @@ import Section from '../../Layouts/Section'
 import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 
 import ShowMoreText from 'react-show-more-text'
+import Image from 'next/image'
 
 export const TeamSection = () => {
 
@@ -25,10 +26,13 @@ export const TeamSection = () => {
             <div key={index}>
               <AnimateWrapper yOffset={70} delayOrder={2 + index * 0.5} animateType={AnimateType.FADEIN}>
                 <div className="xl:px-4">
-                  <img
+                  <Image
                     src={team.profileImg}
                     className="max-w-full rounded-[20px]"
-                    alt=""
+                    width={347}
+                    height={349}
+                    layout="responsive"
+                    alt={team.name}
                   />
                 </div>
                 <Paragraph className="font-bold text-white mt-[18px] xl:mt-7 text-3.75 tablet:text-5 xl:text-content font-RedHatBold flex items-center justify-center">

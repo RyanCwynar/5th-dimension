@@ -4,6 +4,7 @@ import Heading from '../../Elements/Heading'
 import Paragraph from '../../Elements/Paragraph'
 import Section from '../../Layouts/Section'
 import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
+import Image from 'next/image'
 
 export const RoadmapSection = () => {
   return (
@@ -56,7 +57,7 @@ export const RoadmapSection = () => {
                 className="w-full max-w-[221px] xl:max-w-[347px] hidden tablet:block"
               >
                 <div className="h-full">
-                  <img src={roadmap.img} className="h-full max-w-full rounded-[20px]" alt="" />
+                  <Image width={347} height={349} layout="responsive" src={roadmap.img} className="h-full max-w-full rounded-[20px]" alt="" />
                 </div>
               </AnimateWrapper>
             </div>
