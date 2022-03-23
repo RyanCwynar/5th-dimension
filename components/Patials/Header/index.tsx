@@ -99,12 +99,12 @@ function Header() {
     <header className="absolute z-50 w-full">
       <nav>
         <div className="mx-auto max-w-[1440px] px-[14px] tablet:px-10">
-          <div className="flex items-center justify-between h-10 tablet:h-21">
+          <div className="flex items-center justify-between h-16 tablet:h-21">
             <div style={{ flex: 5 }}>
               <a href="/">
                 <AnimateWrapper animateType={AnimateType.SLIDEIN} xOffset={-100} delayOrder={1}>
                   <img
-                    className="max-w-[127px] tablet:max-w-[308px]"
+                    className="max-w-[200px] tablet:max-w-[308px]"
                     src="/5th-logo.png"
                     alt="Workflow"
                   />
