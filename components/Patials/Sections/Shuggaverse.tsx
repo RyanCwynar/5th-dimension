@@ -3,7 +3,6 @@ import Heading from '../../Elements/Heading'
 import Paragraph from '../../Elements/Paragraph'
 import Section from '../../Layouts/Section'
 import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
-import Image from 'next/image'
 
 export const ShuggaverseSection = () => {
   return (
@@ -14,8 +13,8 @@ export const ShuggaverseSection = () => {
       <AnimateWrapper xOffset={-100} delayOrder={1} animateType={AnimateType.SLIDEIN}>
         <Heading className="text-center text-white text-headingMobile tablet:text-8 xl:text-heading tablet:text-left">About the 5th Dimension</Heading>
       </AnimateWrapper>
-      <div className="flex w-full">
-        <div className="w-full min-w-[394px] xl:min-w-[585px] max-w-[394px] xl:max-w-[585px] hidden tablet:block">
+      <div className="flex w-full mt-4">
+        <div className="w-full min-w-[420px] xl:min-w-[585px] max-w-[420px] xl:max-w-[585px] hidden tablet:block">
           <AnimateWrapper yOffset={-70} delayOrder={1.5} animateType={AnimateType.FADEIN}>
             <Paragraph className="mt-5 tablet:mt-9 xl:mt-[29px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
               5th Dimension Multiverse
@@ -37,7 +36,7 @@ export const ShuggaverseSection = () => {
         <div className="tablet:pl-7 xl:pl-[126px] mt-6 tablet:mt-0">
           <AnimateWrapper xOffset={-100} delayOrder={1.5} className="hidden text-right tablet:block" animateType={AnimateType.SLIDEIN}> {/** Slide right to left on mobile for first item only */}
             <div className="max-w-[452px] block">
-              <Image src="/Shuggaverse_01.png" className='rounded-[20px]' width={452} height={315} layout="fixed" alt="" />
+              <img src="/Shuggaverse_01.png" className='rounded-[20px]' alt="" />
             </div>
             <Paragraph className="mt-[2px] text-[10px] tablet:text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
@@ -51,7 +50,7 @@ export const ShuggaverseSection = () => {
           </AnimateWrapper>
           <AnimateWrapper xOffset={100} delayOrder={1.5} className="block text-right tablet:hidden" animateType={AnimateType.SLIDEIN}> {/** Slide right to left on mobile for first item only */}
             <div className="max-w-[452px] relative">
-              <Image src="/Shuggaverse_01.png" className='rounded-[20px]' width={452} height={315} layout="responsive" alt="" />
+              <img src="/Shuggaverse_01.png" className='rounded-[20px]' alt="" />
             </div>
             <Paragraph className="mt-[2px] text-[10px] tablet:text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
@@ -64,7 +63,7 @@ export const ShuggaverseSection = () => {
             </Paragraph>
           </AnimateWrapper>
           <AnimateWrapper xOffset={-100} delayOrder={2} className="text-right mt-6 xl:mt-11" animateType={AnimateType.SLIDEIN}>
-            <Image src="/Shuggaverse_02.png" className="rounded-[20px]" width={452} height={315} layout="responsive" alt="" />
+            <img src="/Shuggaverse_02.png" className="rounded-[20px]" alt="" />
             <Paragraph className="mt-[2px] text-3 xl:text-buttonSmall italic text-primary">
               Concept Sketch for upcoming project
             </Paragraph>

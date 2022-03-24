@@ -22,16 +22,16 @@ export const Hooareyou = () => {
         </div>
         <div className="mx-auto">
           <Paragraph className="mt-1 tablet:mt-2 xl:mt-3 text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary">
-            <span className="font-bold">Talented artist</span> who feels like your time is being wasted at a day job.
+            <span className="font-RedHatBold">Talented artist</span> who feels like your time is being wasted at a day job.
           </Paragraph>
           <Paragraph className="mt-1 tablet:mt-2 xl:mt-3 text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary">
-            <span className="font-bold">NFT investor</span> who wants access to the hottest new projects.
+            <span className="font-RedHatBold">NFT investor</span> who wants access to the hottest new projects.
           </Paragraph>
           <Paragraph className="mt-1 tablet:mt-2 xl:mt-3 text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary">
-            <span className="font-bold">Fan of art and music</span> who wants to get close with the creatives.
+            <span className="font-RedHatBold">Fan of art and music</span> who wants to get close with the creatives.
           </Paragraph>
           <Paragraph className="mt-1 tablet:mt-2 xl:mt-3 text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary">
-            <span className="font-bold">Aspiring artist or musician</span> looking to improve your craft.
+            <span className="font-RedHatBold">Aspiring artist or musician</span> looking to improve your craft.
           </Paragraph>
         </div>
         <div className="absolute hidden tablet:block right-0 max-w-[170px]">
