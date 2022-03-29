@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React, { ReactNode } from 'react'
 import Header from '../Patials/Header'
 
@@ -6,12 +7,16 @@ interface LayoutProps {
   children: ReactNode
 }
 
-const Layout = ({className, children }: LayoutProps) => {
+const Layout = ({ className, children }: LayoutProps) => {
   return (
     <>
-      <main className={`${className}`} >
+      <Head>
+        <title>5th Dimension</title>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+      <main className={`${className}`}>
         <Header />
-        { children }
+        {children}
       </main>
     </>
   )
