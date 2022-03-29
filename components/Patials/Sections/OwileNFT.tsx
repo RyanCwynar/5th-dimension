@@ -6,7 +6,7 @@ import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
 export const OwileNFTSection = () => {
   return (
     <Section
-      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-14 tablet:pt-16"
+      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-14 tablet:pt-[140px]"
       navigateID="topSection"
     >
       <AnimateWrapper xOffset={-100} delayOrder={1} className="block tablet:hidden" animateType={AnimateType.SLIDEIN}>
@@ -23,18 +23,18 @@ export const OwileNFTSection = () => {
           </AnimateWrapper>
           <AnimateWrapper yOffset={0} delayOrder={2} animateType={AnimateType.FADEIN}>
             <ul className="mt-[25px] tablet:mt-7 xl:mt-[31px] pl-6 list-disc text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary max-w-[334px] tablet:max-w-[500px] xl:max-w-none mx-auto">
-              <li>WL opportunities for community and partner projects.</li>
-              <li>Free future 5th Dimension NFTs.</li>
-              <li>Free digital copy of “Birth of the Shugga” comic book album</li>
-              <li>A network of artists, collaboration opportunities, community grants, and project launchpad.</li>
-              <li>A deep, rich Bohemian culture that encourages freedom of expression.</li>
-              <li>Participation in a governance structure built and run by artists.</li>
+              <li><span className="font-RedHatBold">A network</span> of artists, collaboration opportunities, community grants, and project launchpad.</li>
+              <li><span className="font-RedHatBold">Whitelist opportunities</span> for community and partner projects.</li>
+              <li>Free future 5th Dimension <span className="font-RedHatBold">NFTs</span>.</li>
+              <li>A deep, rich Bohemian <span className="font-RedHatBold">culture</span> that encourages freedom of expression.</li>
+              <li><span className="font-RedHatBold">Participation</span> in a governance structure built and run by artists.</li>
+              <li>Free digital copy of “Birth of the Shugga” comic book album.</li>
             </ul>
           </AnimateWrapper>
         </div>
         <div className="flex-grow">
           <AnimateWrapper xOffset={100} delayOrder={1.5} animateType={AnimateType.SLIDEIN}>
-            <img src="/T-Bone_golden.png" className="mx-auto max-w-[110px] tablet:max-w-[220px] xl:max-w-[400px]" />
+            <img src="/T-Bone_golden.png" className="mx-auto max-w-[140px] tablet:max-w-[260px] xl:max-w-[400px]" />
           </AnimateWrapper>
         </div>
       </div>

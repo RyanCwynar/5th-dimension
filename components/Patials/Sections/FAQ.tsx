@@ -13,7 +13,7 @@ export const FAQSection = () => {
       className="mx-auto mt-[60px] tablet:mt-32 max-w-[610px] xl:max-w-[872px] px-4"
       navigateID="faq"
     >
-      <AnimateWrapper xOffset={-100} delayOrder={1} animateType={AnimateType.SLIDEIN}>
+      <AnimateWrapper xOffset={-100} delayOrder={.5} animateType={AnimateType.SLIDEIN}>
         <Heading className="text-center text-white text-headingMobile tablet:text-8 xl:text-heading">
           FAQ
         </Heading>
@@ -21,7 +21,7 @@ export const FAQSection = () => {
       <div className="faq-container mt-6 tablet:mt-[31px] xl:mt-[38px]">
         {faqData.map((item, index) => (
           <div className="mt-2 tablet:mt-[10px] xl:mt-4 faq-item" key={index}>
-            <AnimateWrapper yOffset={70} delayOrder={2 + index * 0.7} animateType={AnimateType.FADEIN}> {/** Slide left to right from fade on mobile */}
+            <AnimateWrapper yOffset={70} delayOrder={1 + index * 0.3} animateType={AnimateType.FADEIN}> {/** Slide left to right from fade on mobile */}
               <Disclosure>
                 {({ open }) => (
                   <div
