@@ -55,7 +55,7 @@ const Home: NextPage = () => {
     <div className="min-h-screen overflow-x-hidden">
       <Head>
         <title>5th Dimension</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Layout className="relative">
