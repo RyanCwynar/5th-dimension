@@ -153,7 +153,7 @@ const Home: NextPage = () => {
                 className="cursor-pointer"
               >
                 <Paragraph className="text-center font-RedHat text-3 font-normal italic leading-none text-white text-opacity-50 tablet:translate-y-[-50px] tablet:-rotate-90 tablet:transform xl:text-3.75">
-                  SCROLL DOWN
+                  Learn More
                 </Paragraph>
                 <DoubleArrowDown className="w-4 tablet:w-5 xl:mt-1" />
               </Link>

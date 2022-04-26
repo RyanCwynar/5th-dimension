@@ -28,8 +28,8 @@ export const OwileNFTSection = () => {
               <li>Free future 5th Dimension <span className="font-RedHatBold">NFTs</span>.</li>
               <li>A deep, rich Bohemian <span className="font-RedHatBold">culture</span> that encourages freedom of expression.</li>
               <li><span className="font-RedHatBold">Participation</span> in a governance structure built and run by artists.</li>
-              <li>Free digital copy of “Birth of the Shugga” comic book album.</li>
-            </ul>
+              <li><span className="font-RedHatBold">Access</span> to build our social networking site designed for creative .</li>
+              <li><span className='text-white font-RedHatBold'> Free comic book album </span>- digital copy of "Birth of the Shugga." </li></ul>
           </AnimateWrapper>
         </div>
         <div className="flex-grow">
