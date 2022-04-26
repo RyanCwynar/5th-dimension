@@ -26,7 +26,7 @@ export const methodData = [
     img: '/Icons/ethereum.png',
     title: '3. Adopt Your Owlie!',
     description:
-      'Mint your Owlie on minting day! Whitelist and Presale mints before the general public',
+      'Mint your Owlie on minting day! Whitelist mints before the general public',
   },
 ]
 
@@ -39,7 +39,7 @@ export const roadmapData = [
       'Partnerships and collaborations with other projects',
       'Whitelist allocation to active community members',
       'NFT giveaway - online talent contest',
-      'Owlie Whitelist mint, presale, and public mint',
+      'Owlie Whitelist mint and public mint',
       'Launch our official Opensea page for secondary market',
     ],
     img: '/roadmap_01.png',
@@ -49,7 +49,6 @@ export const roadmapData = [
     description: [
       'Owlie NFT reveal party',
       'Ownership verification to unlock exclusive Discord channels',
-      'Open up project funding proposals & applications',
       'Expand the 5th Dimension team',
       'Community workshops and events with notable guests',
       'The Great Gathering',
@@ -60,11 +59,11 @@ export const roadmapData = [
     title: 'Phase 3: 2022 & Beyond',
     description: [
       'Owlie NFT rewards',
-      '5th Dimension DAO token launch',
-      'More 5th Dimension NFTs!',
-      'On-site talent profile pages for 5D NFT holders',
-      'Collaborative matching system',
-      'Community led projects and NFT releases',
+      'Launch 5D Art World',
+      'Launch Shuggaverse',
+      'Exclusive social netowking site for 5DF NFT holders',
+      'Community lead projects and NFT releases',
+      'Open up project funding proposals & applications',
     ],
     img: '/roadmap_03.png',
   },

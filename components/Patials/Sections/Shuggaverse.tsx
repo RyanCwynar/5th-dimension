@@ -23,13 +23,17 @@ export const ShuggaverseSection = () => {
               The 5th Dimension multiverse will contain many worlds. Each world is dedicated to a different area of arts and entertainment. There will be worlds for fine art, music, animated art, film, and more – even discovering new genres that are possible because of NFT technology.
             </Paragraph>
             <Paragraph className="mt-5 tablet:mt-9 xl:mt-[26px] text-3.75 tablet:text-5 xl:text-content font-RedHatBold text-white">
-              Shuggaverse
+              Upcoming 5D Worlds
             </Paragraph>
             <Paragraph className="mt-6 text-4 xl:text-[26px] xl:leading-[33.07px] text-primary">
-              The Owlies are part of the Shuggaverse, the first world within the 5th Dimension multiverse, and is a world dedicated to creating comic books.
-              <span className="inline-block mt-[9px] xl:mt-[13px]">
-                Later this year, we will release our first project, a comic book album (comic book with music soundtrack) called, “Birth of the Shugga” –  origin story of anti-establishment superhero, Shugga, who is dedicated to destroying inter-dimensional Ghouls and stopping Da Man’s fiat money empire. All Owlies will receive a free digital copy!
+              <span className="font-RedHatBold">
+                  5D Art World 
               </span>
+              - This will be a comunity for artists to network, collaborate, learn, get funding, and more. We will start things off with an ambitious project bringing together 500 artists to release an NFT collection of 1000 unique art NFTs. Artists will be chosen from the 5D Owlie Commninity.
+              <span className="inline-block mt-[9px] xl:mt-[13px] font-RedHatBold">
+                The Shuggarverse
+              </span>
+              - A world dedicated to creating comic books. Later this year, we will release an NFT collection along with our first project, a comic book album (comic book with music soundtrack) called  "Birth of the Shugga" - origin story of anti establishment superhero, Shugga, who is dedicated to destroying inter-dimensional Ghouls and stopping Da Man's fiat money empire. All Owlies will receive a free digital copy!  
             </Paragraph>
           </AnimateWrapper>
         </div>
