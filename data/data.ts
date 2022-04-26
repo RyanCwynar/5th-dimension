@@ -114,20 +114,16 @@ export const faqData = [
     answer:
       'We are creating a decentralized community to support creators, artists, and musicians through networking, collaboration, community grants, and a project launchpad. We aim to provide a better alternative to the centralized establishment, and to restore power to creators everywhere.',
   },
-  {
-    question: 'What is a multiverse?',
-    answer:
-      'A multiverse is a DAO that contains many metaverse communities within it. The 5D multiverse will have a decentralized governance structure that facilitates the creation of new communities, promotes their activities, and allows them to share resources.',
-  },
+
   {
     question: 'What is the Shuggaverse?',
     answer:
-      'The Shuggaverse is the first metaverse community being created within the 5th Dimension multiverse. This community is focused on combining stories, art, and music into the form of comic book albums. We will be facilitating collaborations, funding promising community projects, and promoting this new genre of entertainment. ',
+      'The Shuggaverse is the metaverse community being created within the 5th Dimension that is focused on creating comic books. We will be facilitating collaborations and funding promising community projects, as well as assisting with publishing, marketing, and distribution.',
   },
   {
     question: 'What is the 5th Dimension Art collection?',
     answer:
-      'The 5D Art Collection is the second metaverse community being built in the 5th Dimension multiverse. It will be a collection of NFT art created by several hundred different artists. Holders of Owlie NFTs will be eligible to apply to participate in the creation of this unique community and submit art for the project. Stay tuned for more details…',
+      'The 5D Art World is the community for artists to network, collaborate, learn, get funding, and more. We will start things off with an ambitious project bringing together 500 artists to release an NFT collection of 1000 unique art NFTs. Artists will be chosen from the 5D Owlie community.',
   },
   {
     question: 'Why do I want to mint an Owlie NFT?',
