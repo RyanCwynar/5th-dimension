@@ -24,7 +24,7 @@ import Section from '../components/Layouts/Section'
 import {
   OwileNFTSection,
   CreateOwileSection,
-  HowtoOwileSection,
+
   RoadmapSection,
   ShuggaverseSection,
   FAQSection,
@@ -167,11 +167,11 @@ const Home: NextPage = () => {
 
           <CreateOwileSection />
 
-          <HowtoOwileSection />
+
 
           <ShuggaverseSection />
 
-          <RoadmapSection />
+
 
           <FAQSection />
 
