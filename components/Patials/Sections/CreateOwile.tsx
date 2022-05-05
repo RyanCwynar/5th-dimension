@@ -64,6 +64,7 @@ export const CreateOwileSection = () => {
             <img src={`/nfts/face/0${face}.png`} alt="" className='absolute top-0 h-full transform -translate-x-1/2 left-1/2' />
             <img src={`/nfts/head/0${head}.png`} alt="" className='absolute top-0 h-full transform -translate-x-1/2 left-1/2' />
             <img src={`/nfts/accessory/0${accessory}.png`} alt="" className='absolute top-0 h-full transform -translate-x-1/2 left-1/2' />
+            <img src="/5th-logo.png" className='absolute top-2 h-6 right-2' />
           </div>
           {/* <AnimateWrapper xOffset={-100} delayOrder={1} animateType={AnimateType.SLIDEIN}> * Slide right to left on mobile */}
           {/* </AnimateWrapper> */}
