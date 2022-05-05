@@ -100,7 +100,7 @@ export const teamData = [
   {
     name: 'Ralf Wiggim',
     icon: "/Icons/ITwitter-team.png",
-    link: "ttps://twitter.com/ydanwashere",
+    link: "https://twitter.com/ydanwashere",
     role: 'UX / Community Manager',
     description:
       'Hey there! I\'m a UI/UX designer with prior experience working with the AthleteX DAO (athletex.io). Now, I am focused on creating 5th Dimensional user experiences.',
