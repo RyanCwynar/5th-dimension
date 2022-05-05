@@ -25,7 +25,7 @@ import {
   OwileNFTSection,
   CreateOwileSection,
 
-  RoadmapSection,
+  // RoadmapSection,
   ShuggaverseSection,
   FAQSection,
   TeamSection,

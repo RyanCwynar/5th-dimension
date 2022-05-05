@@ -26,7 +26,7 @@ export const OwileNFTSection = () => {
               <li><span className="font-RedHatBold">A network</span> of artists and collaboration opportunities.</li>
               <li><span className="font-RedHatBold">Apply</span> to participate in community projects and apply for funding.</li>
               <li>Access to our <span className="font-RedHatBold">project launchpad.</span>.</li>
-              <li>A deep, rich <span className="font-RedHatBold"> Bohemian</span>culture that encourages freedom of expression.</li>
+              <li>A deep, rich <span className="font-RedHatBold"> Bohemian</span> culture that encourages freedom of expression.</li>
               <li><span className="font-RedHatBold">Participation</span> in a governance structure built and run by artists.</li>
             </ul>
           </AnimateWrapper>
