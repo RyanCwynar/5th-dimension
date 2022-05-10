@@ -27,7 +27,6 @@ import {
 
   // RoadmapSection,
   ShuggaverseSection,
-  FAQSection,
   TeamSection,
   Hooareyou,
 } from '../components/Patials/Sections'
@@ -173,7 +172,7 @@ const Home: NextPage = () => {
 
 
 
-          <FAQSection />
+
 
           <TeamSection />
 

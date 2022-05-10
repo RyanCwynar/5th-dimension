@@ -24,8 +24,9 @@ export const OwileNFTSection = () => {
           <AnimateWrapper yOffset={0} delayOrder={2} animateType={AnimateType.FADEIN}>
             <ul className="mt-[25px] tablet:mt-7 xl:mt-[31px] pl-6 list-disc text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary max-w-[334px] tablet:max-w-[500px] xl:max-w-none mx-auto">
               <li><span className="font-RedHatBold">A network</span> of artists and collaboration opportunities.</li>
-              <li><span className="font-RedHatBold">Apply</span> to participate in community projects and apply for funding.</li>
+              <li><span className="font-RedHatBold">Ability</span> to participate in community projects and apply for funding.</li>
               <li>Access to our <span className="font-RedHatBold">project launchpad.</span>.</li>
+              <li><span className="font-RedHatBold">Whitelist</span> opportunities for community and partner projects.</li>
               <li>A deep, rich <span className="font-RedHatBold"> Bohemian</span> culture that encourages freedom of expression.</li>
               <li><span className="font-RedHatBold">Participation</span> in a governance structure built and run by artists.</li>
             </ul>

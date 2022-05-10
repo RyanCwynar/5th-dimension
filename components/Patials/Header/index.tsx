@@ -34,13 +34,6 @@ const routes = [
       'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
     title: 'About Us',
   },
-
-  {
-    to: 'faq',
-    className:
-      'text-gradient-opacity block cursor-pointer RedHatRegular text-buttonPrimary tablet:text-8 lg:text-5 font-semibold leading-[26.46px] hover:bg-textGradient',
-    title: 'FAQ',
-  },
   {
     to: 'team',
     className:

@@ -31,7 +31,7 @@ export const ShuggaverseSection = () => {
               </span>
               The 5D Art World is the community for artists to network, collaborate, learn, get funding, and more. We will start things off with an ambitious project bringing together 500 artists to release an NFT collection of 1000 unique art NFTs. Artists will be chosen from the 5D Owlie community. 
               <span className="inline-block mt-[9px] xl:mt-[13px] font-RedHatBold">
-                The Shuggarverse &nbsp;
+                The Shuggaverse &nbsp;
               </span>
               - &nbsp; The Shuggaverse is a world dedicated to creating comic books. Later this year, we will release an NFT collection along with our first project, a comic book album (comic book with music soundtrack) called, “Birth of the Shugga” –  origin story of anti-establishment superhero, Shugga, who is dedicated to destroying inter-dimensional Ghouls and stopping Da Man’s fiat money empire. All Owlies will receive a free digital copy!
             </Paragraph>
