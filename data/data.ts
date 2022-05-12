@@ -106,6 +106,15 @@ export const teamData = [
       'Hey there! I\'m a UI/UX designer with prior experience working with the AthleteX DAO (athletex.io). Now, I am focused on creating 5th Dimensional user experiences.',
     profileImg: '/team_04.png',
   },
+  {
+    name: 'FUELED ON BACON',
+    icon: "/Icons/IGeography-team.png",
+    link: "https://fueledonbacon.com/",
+    role: 'Web3 Developers',
+    description:
+      'Fueled on Bacon is a Web3 company focused on building the future. We partner with people who have exciting visions and are looking to leave an impact on the space. To us, community is everything.',
+    profileImg: '/FoB.webp',
+  },
 ]
 
 export const faqData = [
