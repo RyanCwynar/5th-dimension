@@ -103,7 +103,7 @@ function Header() {
               className="mx-auto hidden max-w-[626px] lg:block"
               style={{ flex: 9 }}
             >
-              <div className="flex items-baseline justify-between space-x-2">
+              <div className="flex items-baseline justify-evenly space-x-2">
                 {routes.map((route, index) => (
                   <AnimateWrapper
                     xOffset={-100}
