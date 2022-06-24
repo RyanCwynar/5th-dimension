@@ -105,7 +105,7 @@ const Home: NextPage = () => {
                     >
                       <Paragraph className="mx-auto max-w-[400px] text-center text-5 text-primary tablet:mx-0 tablet:text-left xl:max-w-[524px] xl:text-headingMobile">
                         <span className="font-semibold text-white">
-                          5,555 Owlies
+                          555 Owlies
                         </span>{' '}
                         are flying into the metaverse from the{' '}
                         <span className="font-semibold text-white">
