@@ -126,7 +126,7 @@ contract FifthDimensionMock is ERC721, AccessControl {
         _whitelistClaimed[account] = true;
         require(_whitelistClaimed[account], "WHITELIST_TOKEN_CLAIMED");
         _supplyCommunity += 1;
-        require(_supplyCommunity + 1 <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
+        require(_supplyCommunity <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
         _safeMint(account, pickRandomCommunityUniqueId());
     }
 
@@ -137,7 +137,7 @@ contract FifthDimensionMock is ERC721, AccessControl {
         _publicSaleClaimed[account] += 1;
         require(_publicSaleClaimed[account] <= _PUBLIC_LIMIT, "PUBLIC_TOKEN_LIMIT");
         _supplyCommunity += 1;
-        require(_supplyCommunity + 1 <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
+        require(_supplyCommunity <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
         _safeMint(_msgSender(), pickRandomCommunityUniqueId());
     }
 
@@ -154,6 +154,7 @@ contract FifthDimensionMock is ERC721, AccessControl {
         uint256 random = uint256(keccak256(abi.encodePacked(_communityIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint256 len = _communityIds.length - _communityIndex;
         _communityIndex += 1;
+
         require(len > 0, 'no _communityIds left');
         uint256 randomIndex = random % len;
         id = _communityIds[randomIndex] != 0 ? _communityIds[randomIndex] : randomIndex;

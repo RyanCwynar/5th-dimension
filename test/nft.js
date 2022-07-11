@@ -12,9 +12,6 @@ const provider = waffle.provider;
 
 describe('CyberlionzMerger', function () {
 
-  const WHITELIST = '0x0000000000000000000000000000000000000000000000000000000000000000'
-  const ADMIN_ROLE = '0x0000000000000000000000000000000000000000000000000000000000000000'
- 
   let signers
   let nft
   let timestamp;
@@ -81,6 +78,12 @@ describe('CyberlionzMerger', function () {
     expect(teamArray[0]).to.be.equal(1)
     expect(teamArray[54]).to.be.equal(55)
 
+    //tries to pick another random
+    await expect(
+        nft.pickRandomTeamUniqueId({ gasLimit: "70000"})
+    ).to.be.revertedWith('no _teamIds left');
+
+
   }).timeout(100000);
 
   it('Test community randomness', async function () {
@@ -104,9 +107,12 @@ describe('CyberlionzMerger', function () {
     expect(communityArray[0]).to.be.equal(56)
     expect(communityArray[499]).to.be.equal(555)
 
+    //tries to pick another random
+    await expect(
+        nft.pickRandomCommunityUniqueId({ gasLimit: "70000"})
+    ).to.be.revertedWith('no _communityIds left');
+
   }).timeout(100000);
-
-
 });
 
 
