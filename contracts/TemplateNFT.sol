@@ -15,31 +15,27 @@ contract TemplateNFT is ERC721A, AccessControl {
     bytes32 public MOD_ROLE = keccak256("MOD_ROLE");
     using Strings for uint256;
 
-    address private immutable _revenueRecipient;
-    
     bytes32 public whitelistMerkleRoot;
 
-    mapping(address=>uint) private _whitelistClaimed;
+    mapping(address=>bool) private _whitelistClaimed;
 
     string private _baseUri;
     string private _tempUri;
     
-    bool public listsFinalized    = false;
-    bool public metadataFinalized = false;
-    bool public timesFinalized    = false;
-    bool public airdropped        = false;
-    bool public revealed          = false;
+    bool public listsFinalized;
+    bool public metadataFinalized;
+    bool public timesFinalized;
+    bool public revealed;
+    bool private airdropped;
 
-    bool private _overrideWhitelist = false;
-    bool private _overridePublic  = false;
+    bool private _overrideWhitelist;
+    bool private _overridePublic;
 
-    uint public constant AIRDROP_LIMIT   = 100;
+    uint public constant AIRDROP_LIMIT = 55;
 
-    uint public collectionSize = 1000;
-    uint public whitelistLimit = 3;
-    uint public publicLimit    = 20;
-    uint public whitelistPrice = 0.07 ether;
-    uint public publicPrice    = 0.1 ether;
+    uint private constant _COLLECTION_SIZE = 555;
+    uint private constant _WHITELIST_LIMIT = 1;
+    uint private constant _PUBLIC_LIMIT = 2;
 
     uint public whitelistStart;
     uint public whitelistEnd;
@@ -47,21 +43,20 @@ contract TemplateNFT is ERC721A, AccessControl {
     uint public publicEnd;
 
     constructor(
-        address revenueRecipient,
         bytes32 _whitelistMerkleRoot,
         string memory tempUri
     )
         ERC721A("TemplateNFT", "TFT")
     {
-        _revenueRecipient  = revenueRecipient;
         whitelistMerkleRoot = _whitelistMerkleRoot;
         _tempUri = tempUri;
         whitelistStart = block.timestamp + 30 minutes;  // starts 30 minutes after contract launch
         whitelistEnd = whitelistStart + 4 hours; // ends 4 hours after it starts
         publicStart = whitelistEnd; // starts when whitelist sale ends
         publicEnd = publicStart + 4 hours; // ends 4 hours after it starts
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _setupRole(ADMIN_ROLE, msg.sender);
+        address account = _msgSender();
+        _setupRole(DEFAULT_ADMIN_ROLE, account);
+        _setupRole(ADMIN_ROLE, account);
     }
 
     function grantAdminRole(address addr) external onlyRole(DEFAULT_ADMIN_ROLE) {
@@ -81,24 +76,21 @@ contract TemplateNFT is ERC721A, AccessControl {
     }
 
     function senderIsAdmin() external view returns(bool){
-        return hasRole(ADMIN_ROLE, msg.sender) || hasRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        address account = _msgSender();
+        return hasRole(ADMIN_ROLE, account) || hasRole(DEFAULT_ADMIN_ROLE, account);
     }
 
     function senderIsMod() external view returns(bool){
-        return hasRole(MOD_ROLE, msg.sender);
-    }
-
-    modifier onlyModOrHigher(){
-        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender) || hasRole(MOD_ROLE, msg.sender), "Must be a mod or higher");
-        _;
+        return hasRole(MOD_ROLE, _msgSender());
     }
 
     modifier onlyAdmin(){
-        require(hasRole(DEFAULT_ADMIN_ROLE, msg.sender) || hasRole(ADMIN_ROLE, msg.sender) , "Must be an admin");
+        address account = _msgSender();
+        require(hasRole(DEFAULT_ADMIN_ROLE, account) || hasRole(ADMIN_ROLE, account) , "Must be an admin");
         _;
     }
 
-    /// @notice the initial 100 tokens will be minted to the team vault for use in giveaways and collaborations.
+    /// @notice the initial 55 tokens will be minted to the team vault for use in giveaways and collaborations.
     function airdrop(address to, uint quantity) external onlyAdmin {
         require(airdropped == false, "ALREADY_AIRDROPPED");
         require(quantity <= AIRDROP_LIMIT, "EXCEEDS_AIRDROP_LIMIT");
@@ -141,28 +133,6 @@ contract TemplateNFT is ERC721A, AccessControl {
         require(timesFinalized == false, "TIMES_FINALIZED");
         publicStart = _publicStartTime;
         publicEnd = _publicEndTime;
-    }
-
-    function reduceCollectionSize(uint _collectionSize) external onlyAdmin {
-        require(_collectionSize < collectionSize, "REDUCE_SIZE_ONLY");
-        require(_collectionSize >= totalSupply(), "MAINTAIN_EXISTING_SUPPLY");
-        collectionSize = _collectionSize;
-    }
-
-    function setPublicLimit(uint _publicLimit) external onlyAdmin {
-        publicLimit = _publicLimit;
-    }
-
-    function setWhitelistLimit(uint _whitelistLimit) external onlyAdmin {
-        whitelistLimit = _whitelistLimit;
-    }
-
-    function setPublicPrice(uint _price) external onlyAdmin {
-        publicPrice = _price;
-    }
-
-    function setWhitelistPrice(uint _price) external onlyAdmin {
-        whitelistPrice = _price;
     }
 
     function toggleReveal() external onlyAdmin {
@@ -210,15 +180,6 @@ contract TemplateNFT is ERC721A, AccessControl {
         return _baseUri;
     }
 
-    /// @notice Withdraw's contract's balance to the withdrawal address
-    function withdraw() external {
-        uint256 balance = address(this).balance;
-        require(balance > 0, "NO_BALANCE");
-
-        (bool success, ) = payable(_revenueRecipient).call{ value: balance }("");
-        require(success, "WITHDRAW_FAILED");
-    }
-
     function _verifyList(bytes32[] calldata _merkleProof, bytes32 root, address addr) internal pure returns(bool) {
         return (MerkleProof.verify(_merkleProof, root, keccak256(abi.encodePacked(addr))) == true);
     }
@@ -227,29 +188,23 @@ contract TemplateNFT is ERC721A, AccessControl {
        return _verifyList(_merkleProof, whitelistMerkleRoot, addr);
     }
     
-    /// @notice each address on the presale list may mint up to 3 tokens at the presale price
-    function whitelistMint(bytes32[] calldata _merkleProof, uint quantity) external payable {
+    /// @notice each address on the presale list may mint up to 1 tokens
+    function whitelistMint(bytes32[] calldata _merkleProof) external {
+        address account = _msgSender();
         require(isWhitelistSaleActive(), "PRESALE_INACTIVE");
-        require(verifyWhitelist(_merkleProof, msg.sender), "PRESALE_NOT_VERIFIED");
-        require(totalSupply() + quantity <= collectionSize, "EXCEEDS_COLLECTION_SIZE");
-        require(_whitelistClaimed[msg.sender] + quantity <= whitelistLimit, "WHITELIST_TOKEN_LIMIT");
-        uint cost = quantity * whitelistPrice;
-        require(msg.value >= cost, "VALUE_TOO_LOW");
-        _whitelistClaimed[msg.sender] += quantity;
-
-        _safeMint(msg.sender, quantity);
+        require(verifyWhitelist(_merkleProof, account), "PRESALE_NOT_VERIFIED");
+        require(totalSupply() + 1 <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
+        require(_whitelistClaimed[account], "WHITELIST_TOKEN_LIMIT");
+        _whitelistClaimed[account] = true;
+        _safeMint(account, 1);
     }
 
     /// @notice may mint up to 5 tokens per transaction at the public sale price.
     function mint(uint quantity) external payable {
         require(isPublicSaleActive(), "PUBLIC_SALE_INACTIVE");
-        require(quantity <= publicLimit, "PUBLIC_TOKEN_LIMIT");
-        require(totalSupply() + quantity <= collectionSize, "EXCEEDS_COLLECTION_SIZE");
-        uint cost;
-        cost = quantity * publicPrice;
-        require(msg.value >= cost, "VALUE_TOO_LOW");
-
-        _safeMint(msg.sender, quantity);
+        require(quantity <= _PUBLIC_LIMIT, "PUBLIC_TOKEN_LIMIT");
+        require(totalSupply() + quantity <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
+        _safeMint(_msgSender(), quantity);
     }
 
     function tokenURI(uint256 id) public view override returns (string memory) {

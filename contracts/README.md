@@ -19,7 +19,7 @@ npx hardhat help
 npx hardhat run --network rinkeby ../scripts/deploy.js
 
 ### Hardhat verify
-npx hardhat verify 0x3CB6EBA85B41ffF14Ed87Ec39f756F8EBe8539d3 --network rinkeby --constructor-args ./scripts/arguments.js
+npx hardhat verify 0x14c5b741E065903337C6EEC012fc58981221B030 --network rinkeby --constructor-args ./scripts/arguments.js
 
 ## Rinkeby
 0x14c5b741E065903337C6EEC012fc58981221B030

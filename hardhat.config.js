@@ -6,8 +6,9 @@
  require("@nomiclabs/hardhat-etherscan");
  require("@nomiclabs/hardhat-ethers");
 
- const { 
+ const {
   ALCHEMY_RINKEBY_API_KEY,
+  ALCHEMY_MAINNET_API_KEY,
   CONTRACT_OWNER_PRIVATE_KEY,
   ETHERSCAN_API_KEY
 } = process.env;
