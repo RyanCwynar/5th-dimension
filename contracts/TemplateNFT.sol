@@ -59,22 +59,6 @@ contract TemplateNFT is ERC721A, AccessControl {
         _setupRole(ADMIN_ROLE, account);
     }
 
-    function grantAdminRole(address addr) external onlyRole(DEFAULT_ADMIN_ROLE) {
-        _grantRole(ADMIN_ROLE, addr);
-    }
-
-    function grantModRole(address addr) external onlyAdmin {
-        _grantRole(MOD_ROLE, addr);
-    }
-
-    function revokeAdminRole(address addr) external onlyRole(DEFAULT_ADMIN_ROLE) {
-        _revokeRole(ADMIN_ROLE, addr);
-    }
-
-    function revokeModRole(address addr) external onlyAdmin {
-        _revokeRole(MOD_ROLE, addr);
-    }
-
     function senderIsAdmin() external view returns(bool){
         address account = _msgSender();
         return hasRole(ADMIN_ROLE, account) || hasRole(DEFAULT_ADMIN_ROLE, account);
@@ -91,11 +75,10 @@ contract TemplateNFT is ERC721A, AccessControl {
     }
 
     /// @notice the initial 55 tokens will be minted to the team vault for use in giveaways and collaborations.
-    function airdrop(address to, uint quantity) external onlyAdmin {
+    function airdrop(address to) external onlyAdmin {
         require(airdropped == false, "ALREADY_AIRDROPPED");
-        require(quantity <= AIRDROP_LIMIT, "EXCEEDS_AIRDROP_LIMIT");
         airdropped = true;
-        _safeMint(to, quantity);
+        _safeMint(to, AIRDROP_LIMIT);
     }
 
     function isWhitelistSaleActive() public view returns(bool){
