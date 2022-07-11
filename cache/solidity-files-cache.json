@@ -368,45 +368,6 @@
         "IERC165"
       ]
     },
-    "/home/santiago/projects/fueled-on-bacon/5th-dimension/contracts/TemplateNFT.sol": {
-      "lastModificationDate": 1657558176899,
-      "contentHash": "1f3edd5d258cfc50da237470243b6460",
-      "sourceName": "contracts/TemplateNFT.sol",
-      "solcConfig": {
-        "version": "0.8.13",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
-        "@openzeppelin/contracts/access/AccessControl.sol",
-        "./ERC721A.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.13"
-      ],
-      "artifacts": [
-        "TemplateNFT"
-      ]
-    },
     "/home/santiago/projects/fueled-on-bacon/5th-dimension/node_modules/@openzeppelin/contracts/utils/cryptography/MerkleProof.sol": {
       "lastModificationDate": 1654790299629,
       "contentHash": "0b24fe01129b29655a0f7968bfc80db3",
@@ -555,8 +516,8 @@
       ]
     },
     "/home/santiago/projects/fueled-on-bacon/5th-dimension/contracts/FifthDimension.sol": {
-      "lastModificationDate": 1657558250094,
-      "contentHash": "2141b03177862b72df3699155b83bba9",
+      "lastModificationDate": 1657559209978,
+      "contentHash": "0cff2c92b2bc0c672ab634cd486aafee",
       "sourceName": "contracts/FifthDimension.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -582,8 +543,9 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/access/Ownable.sol",
-        "./TemplateNFT.sol"
+        "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol",
+        "@openzeppelin/contracts/access/AccessControl.sol",
+        "./ERC721A.sol"
       ],
       "versionPragmas": [
         "^0.8.13"
