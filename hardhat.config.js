@@ -5,6 +5,7 @@
  require("@nomiclabs/hardhat-waffle");
  require("@nomiclabs/hardhat-etherscan");
  require("@nomiclabs/hardhat-ethers");
+ require('hardhat-contract-sizer');
 
  const {
   ALCHEMY_RINKEBY_API_KEY,
@@ -28,5 +29,12 @@ module.exports = {
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY
+  },
+  contractSizer: {
+    alphaSort: true,
+    disambiguatePaths: false,
+    runOnCompile: true,
+    strict: true,
+    only: [],
   }
 };
