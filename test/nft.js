@@ -30,7 +30,7 @@ describe('CyberlionzMerger', function () {
 
     console.log((await provider.getBlock("latest")).timestamp)
     timestamp = (await getLatestTimestamp()).toNumber()
-    whitelistStart = timestamp + 60*60 //starts in 5 minutes
+    whitelistStart = timestamp + 60*5 //starts in 5 minutes
     whitelistEnd = whitelistStart + 60*5; //lasts 5 minutes
     publicStart = whitelistEnd + 60; //one minute after whitelisEnd
     publicEnd = publicStart + 60*5; //lasts 5 minutes

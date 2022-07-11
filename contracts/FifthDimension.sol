@@ -23,9 +23,6 @@ contract FifthDimension is ERC721, AccessControl {
     string private _baseUri;
     string private _tempUri;
     
-    bool public listsFinalized;
-    bool public metadataFinalized;
-    bool public timesFinalized;
     bool public revealed;
 
     uint16 private constant _AIRDROP_LIMIT = 55;
@@ -98,32 +95,14 @@ contract FifthDimension is ERC721, AccessControl {
     }
 
     function toggleReveal() external onlyAdmin {
-        require(metadataFinalized == false, "METADATA_FINALIZED");
         revealed = !revealed;
     }
 
-    function finalizeMetadata() external onlyAdmin {
-        require(metadataFinalized == false, "METADATA_FINALIZED");
-        metadataFinalized = true;
-    }
-
-    function finalizeTimes() external onlyAdmin {
-        require(timesFinalized == false, "TIMES_FINALIZED");
-        timesFinalized = true;
-    }
-
-    function finalizeLists() external onlyAdmin {
-        require(listsFinalized == false, "LIST_FINALIZED");
-        listsFinalized = true;
-    }
-    
     function setBaseURI(string memory baseUri) external onlyAdmin {
-        require(metadataFinalized == false, "METADATA_FINALIZED");
         _baseUri = baseUri;
     }
 
     function setPlaceholderURI(string memory tempUri) external onlyAdmin {
-        require(metadataFinalized == false, "METADATA_FINALIZED");
         _tempUri = tempUri;
     }
 
