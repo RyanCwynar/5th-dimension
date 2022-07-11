@@ -369,8 +369,8 @@
       ]
     },
     "/home/santiago/projects/fueled-on-bacon/5th-dimension/contracts/TemplateNFT.sol": {
-      "lastModificationDate": 1654790474227,
-      "contentHash": "1ea287529203759c5bfbf8326db81a24",
+      "lastModificationDate": 1657558176899,
+      "contentHash": "1f3edd5d258cfc50da237470243b6460",
       "sourceName": "contracts/TemplateNFT.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -555,8 +555,8 @@
       ]
     },
     "/home/santiago/projects/fueled-on-bacon/5th-dimension/contracts/FifthDimension.sol": {
-      "lastModificationDate": 1654790505315,
-      "contentHash": "f233df1f7a2c5e20f84633fd86d91db3",
+      "lastModificationDate": 1657558250094,
+      "contentHash": "2141b03177862b72df3699155b83bba9",
       "sourceName": "contracts/FifthDimension.sol",
       "solcConfig": {
         "version": "0.8.13",
