@@ -151,8 +151,9 @@ contract FifthDimension is ERC721, AccessControl {
     }
 
     function _pickRandomCommunityUniqueId() private returns (uint256 id) {
-        uint256 random = uint256(keccak256(abi.encodePacked(_communityIndex++, msg.sender, block.timestamp, blockhash(block.number-1))));
-        uint256 len = _communityIds.length - _communityIndex++;
+        _communityIndex += 1;
+        uint256 random = uint256(keccak256(abi.encodePacked(_communityIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint256 len = _communityIds.length - _communityIndex;
         require(len > 0, 'no _communityIds left');
         uint256 randomIndex = random % len;
         id = _communityIds[randomIndex] != 0 ? _communityIds[randomIndex] : randomIndex;
@@ -162,8 +163,9 @@ contract FifthDimension is ERC721, AccessControl {
     }
 
     function _pickRandomTeamUniqueId() private returns (uint256 id) {
-        uint256 random = uint256(keccak256(abi.encodePacked(_teamIndex++, msg.sender, block.timestamp, blockhash(block.number-1))));
-        uint256 len = _teamIds.length - _teamIndex++;
+        _teamIndex += 1;
+        uint256 random = uint256(keccak256(abi.encodePacked(_teamIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint256 len = _teamIds.length - _teamIndex;
         require(len > 0, 'no _teamIds left');
         uint256 randomIndex = random % len;
         id = _teamIds[randomIndex] != 0 ? _teamIds[randomIndex] : randomIndex;

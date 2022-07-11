@@ -30,7 +30,7 @@ describe('CyberlionzMerger', function () {
 
     console.log((await provider.getBlock("latest")).timestamp)
     timestamp = (await getLatestTimestamp()).toNumber()
-    whitelistStart = timestamp + 60*5 //starts in 5 minutes
+    whitelistStart = timestamp + 60*60 //starts in 60 minutes
     whitelistEnd = whitelistStart + 60*5; //lasts 5 minutes
     publicStart = whitelistEnd + 60; //one minute after whitelisEnd
     publicEnd = publicStart + 60*5; //lasts 5 minutes
@@ -61,33 +61,50 @@ describe('CyberlionzMerger', function () {
   });
 
 
-  it('Test randomness', async function () {
+  it('Test team randomness', async function () {
 
-    const gas = []
-
-    const arr = []
-    await Promise.all((new Array(555).fill(0)).map(async a => {
-
+    let teamArray = []
+    await Promise.all((new Array(55).fill(0)).map(async a => {
         try {
-            let tx = await nft.pickRandomUniqueId(parseInt(Math.random() * (1000 - 1) + 1), { gasLimit: "80000"});
+            let tx = await nft.pickRandomTeamUniqueId({ gasLimit: "70000"});
             tx = await tx.wait()
-    
             const tokenId = tx.events[0].args[0].toNumber();
-            expect(arr).not.to.be.containing(tokenId);
-    
-            arr.push(tokenId)
-            gas.push(tx.gasUsed.toNumber())
+            expect(teamArray).not.to.be.containing(tokenId);
+            teamArray.push(tokenId)
+        } catch(e) {
+            console.log(e)
+        }
+    }))
+    expect(teamArray.length).to.be.equal(55)
+    expect(teamArray).not.to.be.containing(56);
+    teamArray = teamArray.sort((a, b) => a-b);
+    expect(teamArray[0]).to.be.equal(1)
+    expect(teamArray[54]).to.be.equal(55)
+
+  }).timeout(100000);
+
+  it('Test community randomness', async function () {
+
+    let communityArray = []
+    await Promise.all((new Array(500).fill(0)).map(async a => {
+        try {
+            let tx = await nft.pickRandomCommunityUniqueId({ gasLimit: "70000"});
+            tx = await tx.wait()
+            const tokenId = tx.events[0].args[0].toNumber();
+            expect(communityArray).not.to.be.containing(tokenId);
+            communityArray.push(tokenId)
         } catch(e) {
             console.log(e)
         }
         
     }))
+    expect(communityArray.length).to.be.equal(500)
+    expect(communityArray).not.to.be.containing(55);
+    communityArray = communityArray.sort((a, b) => a-b);
+    expect(communityArray[0]).to.be.equal(56)
+    expect(communityArray[499]).to.be.equal(555)
 
-    console.log(arr.length)
-    console.log(gas)
-
-
-  }).timeout(100000);;
+  }).timeout(100000);
 
 
 });

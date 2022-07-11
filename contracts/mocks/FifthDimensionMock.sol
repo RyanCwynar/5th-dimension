@@ -43,7 +43,6 @@ contract FifthDimensionMock is ERC721, AccessControl {
     uint64 public publicStart;
     uint64 public publicEnd;
 
-
     constructor(
         uint64 _whitelistStart,
         uint64 _whitelistEnd,
@@ -152,8 +151,9 @@ contract FifthDimensionMock is ERC721, AccessControl {
 
     event TokenId(uint256 tokenId);
     function pickRandomCommunityUniqueId() public returns (uint256 id) {
-        uint256 random = uint256(keccak256(abi.encodePacked(_communityIndex++, msg.sender, block.timestamp, blockhash(block.number-1))));
-        uint256 len = _communityIds.length - _communityIndex++;
+        uint256 random = uint256(keccak256(abi.encodePacked(_communityIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint256 len = _communityIds.length - _communityIndex;
+        _communityIndex += 1;
         require(len > 0, 'no _communityIds left');
         uint256 randomIndex = random % len;
         id = _communityIds[randomIndex] != 0 ? _communityIds[randomIndex] : randomIndex;
@@ -163,9 +163,11 @@ contract FifthDimensionMock is ERC721, AccessControl {
         emit TokenId(id);
     }
 
+
     function pickRandomTeamUniqueId() public returns (uint256 id) {
-        uint256 random = uint256(keccak256(abi.encodePacked(_teamIndex++, msg.sender, block.timestamp, blockhash(block.number-1))));
-        uint256 len = _teamIds.length - _teamIndex++;
+        uint256 random = uint256(keccak256(abi.encodePacked(_teamIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
+        uint256 len = _teamIds.length - _teamIndex;
+        _teamIndex += 1;
         require(len > 0, 'no _teamIds left');
         uint256 randomIndex = random % len;
         id = _teamIds[randomIndex] != 0 ? _teamIds[randomIndex] : randomIndex;
