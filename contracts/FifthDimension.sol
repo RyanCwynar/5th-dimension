@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract FifthDimension is ERC721, AccessControl {
+contract FifthDimensionMock is ERC721, AccessControl {
     bytes32 public ADMIN_ROLE = keccak256("ADMIN_ROLE");
     bytes32 public MOD_ROLE = keccak256("MOD_ROLE");
     using Strings for uint256;
@@ -24,9 +24,9 @@ contract FifthDimension is ERC721, AccessControl {
     string private _tempUri;
     
     bool public revealed;
+    bool private _overridePrivateSale;
+    bool private _overridePublicSale;
 
-    uint16 private constant _AIRDROP_LIMIT = 55;
-    uint16 private constant _COLLECTION_SIZE = 555;
     uint16 private constant _WHITELIST_LIMIT = 1;
     uint16 private constant _PUBLIC_LIMIT = 2;
 
@@ -42,7 +42,6 @@ contract FifthDimension is ERC721, AccessControl {
     uint64 public whitelistEnd;
     uint64 public publicStart;
     uint64 public publicEnd;
-
 
     constructor(
         uint64 _whitelistStart,
@@ -80,18 +79,26 @@ contract FifthDimension is ERC721, AccessControl {
 
     /// @notice send more gas if you are minting a high quantity.
     function airdrop(address to, uint16 quantity) external onlyAdmin {
-        require(_supplyTeamWallet < _AIRDROP_LIMIT, "Airdrop limit reached");
+        _supplyTeamWallet += quantity;
         for(uint16 i = 0; i < quantity; i++) {
             _safeMint(to, _pickRandomTeamUniqueId());
         }
     }
 
     function isWhitelistSaleActive() public view returns(bool){
-        return block.timestamp > whitelistStart && block.timestamp < whitelistEnd;
+        return _overridePrivateSale || (block.timestamp > whitelistStart && block.timestamp < whitelistEnd);
     }
 
     function isPublicSaleActive() public view returns(bool) {
-        return block.timestamp > publicStart && block.timestamp < publicEnd;
+        return _overridePublicSale || (block.timestamp > publicStart && block.timestamp < publicEnd);
+    }
+
+    /// @notice overrides public and private sale
+    /// @param publicSale true if override public sale
+    /// @param privateSale true if override private sale
+    function overrideSales(bool publicSale, bool privateSale) external onlyAdmin {
+        _overridePublicSale = publicSale;
+        _overridePrivateSale = privateSale;
     }
 
     function toggleReveal() external onlyAdmin {
@@ -124,10 +131,9 @@ contract FifthDimension is ERC721, AccessControl {
         address account = _msgSender();
         require(isWhitelistSaleActive(), "PRESALE_INACTIVE");
         require(_verifyWhitelist(_merkleProof, account), "PRESALE_NOT_VERIFIED");
+        require(!_whitelistClaimed[account], "WHITELIST_TOKEN_CLAIMED");
         _whitelistClaimed[account] = true;
-        require(_whitelistClaimed[account], "WHITELIST_TOKEN_CLAIMED");
         _supplyCommunity += 1;
-        require(_supplyCommunity + 1 <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
         _safeMint(account, _pickRandomCommunityUniqueId());
     }
 
@@ -138,7 +144,6 @@ contract FifthDimension is ERC721, AccessControl {
         _publicSaleClaimed[account] += 1;
         require(_publicSaleClaimed[account] <= _PUBLIC_LIMIT, "PUBLIC_TOKEN_LIMIT");
         _supplyCommunity += 1;
-        require(_supplyCommunity + 1 <= _COLLECTION_SIZE, "EXCEEDS_COLLECTION_SIZE");
         _safeMint(_msgSender(), _pickRandomCommunityUniqueId());
     }
 
@@ -151,9 +156,10 @@ contract FifthDimension is ERC721, AccessControl {
     }
 
     function _pickRandomCommunityUniqueId() private returns (uint256 id) {
-        _communityIndex += 1;
         uint256 random = uint256(keccak256(abi.encodePacked(_communityIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint256 len = _communityIds.length - _communityIndex;
+        _communityIndex += 1;
+
         require(len > 0, 'no _communityIds left');
         uint256 randomIndex = random % len;
         id = _communityIds[randomIndex] != 0 ? _communityIds[randomIndex] : randomIndex;
@@ -162,10 +168,11 @@ contract FifthDimension is ERC721, AccessControl {
         _communityIds[len - 1] = 0;
     }
 
+
     function _pickRandomTeamUniqueId() private returns (uint256 id) {
-        _teamIndex += 1;
         uint256 random = uint256(keccak256(abi.encodePacked(_teamIndex, msg.sender, block.timestamp, blockhash(block.number-1))));
         uint256 len = _teamIds.length - _teamIndex;
+        _teamIndex += 1;
         require(len > 0, 'no _teamIds left');
         uint256 randomIndex = random % len;
         id = _teamIds[randomIndex] != 0 ? _teamIds[randomIndex] : randomIndex;
