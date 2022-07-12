@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract FifthDimensionMock is ERC721, AccessControl {
+contract FifthDimension is ERC721, AccessControl {
     bytes32 public ADMIN_ROLE = keccak256("ADMIN_ROLE");
     bytes32 public MOD_ROLE = keccak256("MOD_ROLE");
     using Strings for uint256;

@@ -17,11 +17,7 @@ npx hardhat help
 
 ### Deploy to network: 
 npx hardhat run --network rinkeby ../scripts/deploy.js
-
-### Hardhat verify
-npx hardhat verify 0x14c5b741E065903337C6EEC012fc58981221B030 --network rinkeby --constructor-args ./scripts/arguments.js
+npx hardhat run --network mainnet ../scripts/deploy.js
 
 ## Rinkeby
-0x14c5b741E065903337C6EEC012fc58981221B030
-
-npx hardhat node --fork https://eth-rinkeby.alchemyapi.io/v2/LK-NXLiAU5BBph3fh2JKcG4gFzXVCqw7 --fork-block-number 10774232
+FifthDimension at 0xb2Ae41cC1710AF6C5335d69992b2688AaD82592D
