@@ -17,37 +17,37 @@ contract FifthDimension is ERC721, AccessControl {
 
     bytes32 private _whitelistMerkleRoot;
 
-    mapping(address=>bool) private _whitelistClaimed;
-    mapping(address => uint8) private _publicSaleClaimed;
+    mapping(address => uint256) private _whitelistClaimed;
+    mapping(address => uint256) private _publicSaleClaimed;
 
     string private _baseUri;
     string private _tempUri;
     
-    bool public revealed;
-    bool private _overridePrivateSale;
-    bool private _overridePublicSale;
+    uint256 public revealed;
+    uint256 private _overridePrivateSale;
+    uint256 private _overridePublicSale;
 
-    uint16 private constant _WHITELIST_LIMIT = 1;
-    uint16 private constant _PUBLIC_LIMIT = 2;
+    uint256 private constant _WHITELIST_LIMIT = 1;
+    uint256 private constant _PUBLIC_LIMIT = 2;
 
-    uint16[500] private _communityIds;
-    uint16[55] private _teamIds;
-    uint16 private _communityIndex;
-    uint16 private _teamIndex;
+    uint256[500] private _communityIds;
+    uint256[55] private _teamIds;
+    uint256 private _communityIndex;
+    uint256 private _teamIndex;
 
-    uint16 private _supplyTeamWallet; //pairs with _AIRDROP_LIMIT
-    uint16 private _supplyCommunity; //pairs with _COLLECTION_SIZE - _AIRDROP_LIMIT
+    uint256 private _supplyTeamWallet; //pairs with _AIRDROP_LIMIT
+    uint256 private _supplyCommunity; //pairs with _COLLECTION_SIZE - _AIRDROP_LIMIT
 
-    uint64 public whitelistStart;
-    uint64 public whitelistEnd;
-    uint64 public publicStart;
-    uint64 public publicEnd;
+    uint256 public whitelistStart;
+    uint256 public whitelistEnd;
+    uint256 public publicStart;
+    uint256 public publicEnd;
 
     constructor(
-        uint64 _whitelistStart,
-        uint64 _whitelistEnd,
-        uint64 _publicStart,
-        uint64 _publicEnd,
+        uint256 _whitelistStart,
+        uint256 _whitelistEnd,
+        uint256 _publicStart,
+        uint256 _publicEnd,
         bytes32 whitelistMerkleRoot,
         string memory name,
         string memory symbol,
@@ -86,23 +86,23 @@ contract FifthDimension is ERC721, AccessControl {
     }
 
     function isWhitelistSaleActive() public view returns(bool){
-        return _overridePrivateSale || (block.timestamp > whitelistStart && block.timestamp < whitelistEnd);
+        return _overridePrivateSale == 1 || (block.timestamp > whitelistStart && block.timestamp < whitelistEnd);
     }
 
     function isPublicSaleActive() public view returns(bool) {
-        return _overridePublicSale || (block.timestamp > publicStart && block.timestamp < publicEnd);
+        return _overridePublicSale == 1 || (block.timestamp > publicStart && block.timestamp < publicEnd);
     }
 
     /// @notice overrides public and private sale
     /// @param publicSale true if override public sale
     /// @param privateSale true if override private sale
     function overrideSales(bool publicSale, bool privateSale) external onlyAdmin {
-        _overridePublicSale = publicSale;
-        _overridePrivateSale = privateSale;
+        _overridePublicSale = publicSale ? 1 : 0;
+        _overridePrivateSale = privateSale ? 1: 0;
     }
 
     function toggleReveal() external onlyAdmin {
-        revealed = !revealed;
+        revealed = revealed == 0 ? 1 : 0;
     }
 
     function setBaseURI(string memory baseUri) external onlyAdmin {
@@ -131,13 +131,13 @@ contract FifthDimension is ERC721, AccessControl {
         address account = _msgSender();
         require(isWhitelistSaleActive(), "PRESALE_INACTIVE");
         require(_verifyWhitelist(_merkleProof, account), "PRESALE_NOT_VERIFIED");
-        require(!_whitelistClaimed[account], "WHITELIST_TOKEN_CLAIMED");
-        _whitelistClaimed[account] = true;
+        require(_whitelistClaimed[account] == 0, "WHITELIST_TOKEN_CLAIMED");
+        _whitelistClaimed[account] = 1;
         _supplyCommunity += 1;
         _safeMint(account, _pickRandomCommunityUniqueId());
     }
 
-    /// @notice may mint up to 5 tokens per transaction at the public sale price.
+    /// @notice may mint up to 2 tokens per transaction at the public sale price.
     function mint() external {
         require(isPublicSaleActive(), "PUBLIC_SALE_INACTIVE");
         address account = _msgSender();
@@ -150,7 +150,7 @@ contract FifthDimension is ERC721, AccessControl {
     function tokenURI(uint256 id) public view override returns (string memory) {
         require(_exists(id), "INVALID_ID");
 
-        return revealed
+        return revealed == 1
             ? string(abi.encodePacked(_baseURI(), id.toString(), ".json"))
             : _tempUri;
     }
@@ -164,7 +164,7 @@ contract FifthDimension is ERC721, AccessControl {
         uint256 randomIndex = random % len;
         id = _communityIds[randomIndex] != 0 ? _communityIds[randomIndex] : randomIndex;
         id += 1 + 55;
-        _communityIds[randomIndex] = uint16(_communityIds[len - 1] == 0 ? len - 1 : _communityIds[len - 1]);
+        _communityIds[randomIndex] = _communityIds[len - 1] == 0 ? len - 1 : _communityIds[len - 1];
         _communityIds[len - 1] = 0;
     }
 
@@ -177,11 +177,11 @@ contract FifthDimension is ERC721, AccessControl {
         uint256 randomIndex = random % len;
         id = _teamIds[randomIndex] != 0 ? _teamIds[randomIndex] : randomIndex;
         id += 1;
-        _teamIds[randomIndex] = uint16(_teamIds[len - 1] == 0 ? len - 1 : _teamIds[len - 1]);
+        _teamIds[randomIndex] = _teamIds[len - 1] == 0 ? len - 1 : _teamIds[len - 1];
         _teamIds[len - 1] = 0;
     }
 
-    function totalSupply() external view returns(uint16) {
+    function totalSupply() external view returns(uint256) {
         return _supplyTeamWallet + _supplyCommunity;
     }
 

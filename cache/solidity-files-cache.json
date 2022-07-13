@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/santiago/projects/fueled-on-bacon/5th-dimension/contracts/FifthDimension.sol": {
-      "lastModificationDate": 1657656284724,
-      "contentHash": "29c72fdc8140f65c417ea47cc7aed891",
+      "lastModificationDate": 1657728478939,
+      "contentHash": "7eb407b6b253093760c821259065280f",
       "sourceName": "contracts/FifthDimension.sol",
       "solcConfig": {
         "version": "0.8.13",
@@ -480,8 +480,8 @@
       ]
     },
     "/home/santiago/projects/fueled-on-bacon/5th-dimension/contracts/mocks/FifthDimensionMock.sol": {
-      "lastModificationDate": 1657653910815,
-      "contentHash": "f635328805b7479655c87ac24ee535a0",
+      "lastModificationDate": 1657728705907,
+      "contentHash": "54f7de29141be803d2dbef2b2184ca54",
       "sourceName": "contracts/mocks/FifthDimensionMock.sol",
       "solcConfig": {
         "version": "0.8.13",

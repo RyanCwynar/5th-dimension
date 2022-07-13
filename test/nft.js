@@ -10,7 +10,7 @@ const { getLatestTimestamp, timeIncreaseTo } = require("../scripts/time");
 const provider = waffle.provider;
 
 
-describe('CyberlionzMerger', function () {
+describe('5th Dimension', function () {
 
   let signers
   let nft
@@ -60,7 +60,7 @@ describe('CyberlionzMerger', function () {
     let teamArray = []
     await Promise.all((new Array(55).fill(0)).map(async a => {
         try {
-            let tx = await nft.pickRandomTeamUniqueId({ gasLimit: "70000"});
+            let tx = await nft.pickRandomTeamUniqueId({ gasLimit: "100000"});
             tx = await tx.wait()
             const tokenId = tx.events[0].args[0].toNumber();
             expect(teamArray).not.to.be.containing(tokenId);
@@ -77,7 +77,7 @@ describe('CyberlionzMerger', function () {
 
     //tries to pick another random
     await expect(
-        nft.pickRandomTeamUniqueId({ gasLimit: "70000"})
+        nft.pickRandomTeamUniqueId({ gasLimit: "100000"})
     ).to.be.revertedWith('no _teamIds left');
 
 
@@ -88,7 +88,7 @@ describe('CyberlionzMerger', function () {
     let communityArray = []
     await Promise.all((new Array(500).fill(0)).map(async a => {
         try {
-            let tx = await nft.pickRandomCommunityUniqueId({ gasLimit: "70000"});
+            let tx = await nft.pickRandomCommunityUniqueId({ gasLimit: "100000"});
             tx = await tx.wait()
             const tokenId = tx.events[0].args[0].toNumber();
             expect(communityArray).not.to.be.containing(tokenId);
@@ -106,7 +106,7 @@ describe('CyberlionzMerger', function () {
 
     //tries to pick another random
     await expect(
-        nft.pickRandomCommunityUniqueId({ gasLimit: "70000"})
+        nft.pickRandomCommunityUniqueId({ gasLimit: "100000"})
     ).to.be.revertedWith('no _communityIds left');
 
   }).timeout(100000);
@@ -116,18 +116,19 @@ describe('CyberlionzMerger', function () {
     let minted = []
     //airdrop 5 for 5 team members = 25
     await Promise.all(new Array(5).fill(0).map(async (a, i) => {
-        let tx = await nft.airdrop(signers[i+1].address, 5);
+        let tx = await nft.airdrop(signers[i+1].address, 5, {gasLimit: "400000"});
         tx = await tx.wait()
         const tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
         expect(tokens.length).to.be.equal(5)
         minted = [...minted, ...tokens]
-        if(i == 0) console.log("Gas Used to airdrop 5 tokens", tx.gasUsed.toNumber())
+        if(i == 0) console.log("airdrop 5 tokens", tx.gasUsed.toNumber())
     }))
     expect(minted.length).to.be.equal(25)
 
     //airdrop 30 for marketing
-    let tx = await nft.airdrop(signers[9].address, 30, {gasLimit: "1200000"});
+    let tx = await nft.airdrop(signers[9].address, 30, {gasLimit: "1400000"});
     tx = await tx.wait()
+    console.log("airdrop 30 tokens", tx.gasUsed.toNumber())
     const tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
     expect(tokens.length).to.be.equal(30)
     minted = [...minted, ...tokens]
@@ -186,6 +187,7 @@ describe('CyberlionzMerger', function () {
     minted = [...minted, ...tokens]
     tx = await nft.connect(signers[6]).whitelistMint(getProof(merkleRoot, signers[6].address))
     tx = await tx.wait()
+    console.log("whitelist mint", tx.gasUsed.toNumber())
     tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
     minted = [...minted, ...tokens]
     expect(minted.length).to.be.equal(6);
@@ -233,7 +235,7 @@ describe('CyberlionzMerger', function () {
 
     let minted = []
     await Promise.all(new Array(20).fill(0).map(async (a, i)=> {
-        let tx = await nft.connect(signers[i]).mint({gasLimit: "150000"})
+        let tx = await nft.connect(signers[i]).mint({gasLimit: "200000"})
         tx = await tx.wait()
         let tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
         minted = [...minted, ...tokens]
@@ -244,8 +246,9 @@ describe('CyberlionzMerger', function () {
     })
     expect(await nft.totalSupply()).to.be.equal(20)
 
-    let tx = await nft.connect(signers[1]).mint({gasLimit: "150000"})
+    let tx = await nft.connect(signers[1]).mint({gasLimit: "200000"})
     tx = await tx.wait()
+    console.log("public mint", tx.gasUsed.toNumber())
     let tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
     minted = [...minted, ...tokens]
 
@@ -253,13 +256,13 @@ describe('CyberlionzMerger', function () {
 
     //tries to mint more than 2
     await expect(
-        nft.connect(signers[1]).mint({gasLimit: "150000"})
+        nft.connect(signers[1]).mint({gasLimit: "200000"})
     ).to.be.revertedWith('PUBLIC_TOKEN_LIMIT');
 
     //tries to mint where public sale ended
     await timeIncreaseTo(publicEnd + 60)
     await expect(
-        nft.connect(signers[1]).mint({gasLimit: "150000"})
+        nft.connect(signers[1]).mint({gasLimit: "200000"})
     ).to.be.revertedWith('PUBLIC_SALE_INACTIVE');
 
     //override public sale
@@ -278,7 +281,7 @@ describe('CyberlionzMerger', function () {
   it("Test URI reveal", async function() {
     await timeIncreaseTo(publicStart + 60)
 
-    let tx = await nft.connect(signers[1]).mint({gasLimit: "150000"})
+    let tx = await nft.connect(signers[1]).mint({gasLimit: "200000"})
     tx = await tx.wait()
     const token = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())[0]
     const tempUri = await nft.tokenURI(token);
