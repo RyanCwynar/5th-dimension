@@ -11,7 +11,15 @@ import {
 } from '../reducers'
 
 import { toast } from 'react-toastify'
-
+import { generateMerkleProof } from '../utils/merkleProofs'
+const whitelistAddress = [
+  '0x47c63f02C412ba48DbA7374917275dE50B2C747D',
+  '0xCD1b6609F5392B6344da69310A049Fd222079F22',
+  '0x9A57fE8965d287D4Bb313D36add46A1EEe256804',
+  '0x6D713a5d4BDc5941731BbC249a350143d2B9D447',
+  '0xC7D2AA4067e2b1B2c1156D567789139b340f6373',
+  '0x44D29466c87A0B8afe2F85fFD6e3Ae25e6119222'
+]
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
@@ -81,13 +89,11 @@ export const useWeb3 = () => {
       const signer = web3Provider.getSigner()
       const address = await signer.getAddress()
       const network = await web3Provider.getNetwork()
-
       const nftContract = new ethers.Contract(
-        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+        String(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS),
         FifthDimensionAbi,
         signer
       ) 
-      
       let nftTx = await nftContract.mint()
 
       // eslint-disable-next-line no-console
@@ -95,6 +101,31 @@ export const useWeb3 = () => {
       let tx = await nftTx.wait()
       // eslint-disable-next-line no-console
       console.log('Mined!', tx)
+
+    }  
+  },[])
+
+  const whiteListMint = useCallback(async () => {
+    if (web3Modal && web3Modal.cachedProvider) {
+      const provider = await web3Modal.connect()
+      const web3Provider = new ethers.providers.Web3Provider(provider)
+      const signer = web3Provider.getSigner()
+      const address = await signer.getAddress()
+      const network = await web3Provider.getNetwork()
+      const nftContract = new ethers.Contract(
+        String(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS),
+        FifthDimensionAbi,
+        signer
+      ) 
+      const merkleProof = generateMerkleProof(whitelistAddress,address)
+      // let nftTx = await nftContract.whiteListMint(merkleProof)
+
+      //eslint-disable-next-line no-console
+      console.log(merkleProof)
+      // console.log('Mining....', nftTx.hash)
+      // let tx = await nftTx.wait()
+      // // eslint-disable-next-line no-console
+      // console.log('Mined!', tx)
 
     }  
   },[])
@@ -156,5 +187,6 @@ export const useWeb3 = () => {
     connect,
     disconnect,
     publicMint,
+    whiteListMint,
   } as Web3ProviderState
 }
