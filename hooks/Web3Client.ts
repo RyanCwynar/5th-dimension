@@ -2,7 +2,7 @@ import { useEffect, useReducer, useCallback } from 'react'
 import { ethers } from 'ethers'
 import Web3Modal from 'web3modal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
-
+import { abi as FifthDimensionAbi } from '../utils/FifthDimension.json'
 import {
   Web3ProviderState,
   Web3Action,
@@ -73,7 +73,31 @@ export const useWeb3 = () => {
       console.error('No Web3Modal')
     }
   }, [provider])
+  // Mint function 
+  const publicMint = useCallback(async () => {
+    if (web3Modal && web3Modal.cachedProvider) {
+      const provider = await web3Modal.connect()
+      const web3Provider = new ethers.providers.Web3Provider(provider)
+      const signer = web3Provider.getSigner()
+      const address = await signer.getAddress()
+      const network = await web3Provider.getNetwork()
 
+      const nftContract = new ethers.Contract(
+        process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+        FifthDimensionAbi,
+        signer
+      ) 
+      
+      let nftTx = await nftContract.mint()
+
+      // eslint-disable-next-line no-console
+      console.log('Mining....', nftTx.hash)
+      let tx = await nftTx.wait()
+      // eslint-disable-next-line no-console
+      console.log('Mined!', tx)
+
+    }  
+  },[])
   // Auto connect to the cached provider
   useEffect(() => {
     if (web3Modal && web3Modal.cachedProvider) {
@@ -131,5 +155,6 @@ export const useWeb3 = () => {
     network,
     connect,
     disconnect,
+    publicMint,
   } as Web3ProviderState
 }

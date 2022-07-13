@@ -8,6 +8,7 @@ export type Web3ProviderState = {
   network: ethers.providers.Network | null | undefined
   connect: (() => Promise<void>) | null
   disconnect: (() => Promise<void>) | null
+  publicMint: (() => Promise<void>) | null
 }
 
 export const web3InitialState: Web3ProviderState = {
@@ -17,6 +18,7 @@ export const web3InitialState: Web3ProviderState = {
   network: null,
   connect: null,
   disconnect: null,
+  publicMint: null
 }
 
 export type Web3Action =

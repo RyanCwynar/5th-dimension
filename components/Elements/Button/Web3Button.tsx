@@ -28,8 +28,6 @@ const DisconnectButton = ({ disconnect }: DisconnectProps) => {
     <Button size={ButtonSize.SMALL} className="" onClick={disconnect}>
       Disconnect
     </Button>
-
-    // <button onClick={disconnect}>Disconnect</button>
   ) : (
     <button>Loading...</button>
   )

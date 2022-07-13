@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import { MintButton } from '../components/Elements/Button/MintButton'
 
 // 3rd Party
 import { Link, animateScroll as scroll } from 'react-scroll'
@@ -120,12 +121,10 @@ const Home: NextPage = () => {
                       className="text-center tablet:text-left"
                       animateType={AnimateType.FADEIN}
                     >
-                      <Button
+                    {/* <Button
                         size={ButtonSize.PRIMARY}
                         className="mx-auto mt-[30px] tablet:mt-7 xl:mt-[34px]"
-                        onClick={() =>
-                          window.open('https://discord.gg/BW4XKRhyHs', '_blank')
-                        }
+                        onClick={MintButton}
                       >
                         <span className="ml-2 flex items-center justify-start">
                           <img
@@ -135,7 +134,9 @@ const Home: NextPage = () => {
                           />
                           Join Discord
                         </span>
-                      </Button>
+                      </Button> */}
+                    <MintButton />
+
                     </AnimateWrapper>
                   </div>
                 </div>
