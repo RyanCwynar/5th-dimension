@@ -9,6 +9,7 @@ export type Web3ProviderState = {
   connect: (() => Promise<void>) | null
   disconnect: (() => Promise<void>) | null
   publicMint: (() => Promise<void>) | null
+  whiteListMint: (() => Promise<void>) | null
 }
 
 export const web3InitialState: Web3ProviderState = {
@@ -18,7 +19,8 @@ export const web3InitialState: Web3ProviderState = {
   network: null,
   connect: null,
   disconnect: null,
-  publicMint: null
+  publicMint: null,
+  whiteListMint: null
 }
 
 export type Web3Action =
