@@ -8,10 +8,9 @@ interface ConnectProps {
 }
 const ConnectButton = ({ connect }: ConnectProps) => {
   return connect ? (
-    <Button size={ButtonSize.SMALL} className="" onClick={connect}>
-
+    <Button  size={ButtonSize.SMALL} className="w-auto !max-w-[100%] flex flex-col justify-center p-4" onClick={connect}>
       Connect
-  </Button>
+    </Button>
 
     // <button onClick={connect}>Connect</button>
   ) : (
@@ -25,7 +24,7 @@ interface DisconnectProps {
 
 const DisconnectButton = ({ disconnect }: DisconnectProps) => {
   return disconnect ? (
-    <Button size={ButtonSize.SMALL} className="" onClick={disconnect}>
+    <Button  size={ButtonSize.SMALL} className="w-auto !max-w-[100%] flex flex-col content-center p-4" onClick={disconnect}>
       Disconnect
     </Button>
   ) : (
