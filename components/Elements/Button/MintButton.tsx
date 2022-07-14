@@ -34,8 +34,10 @@ const WhiteListMintButton = ({ mint }: PublicProps) => {
   )
 }
 
-export async function  MintButton()  {
+export function MintButton() {
   const { web3Provider, publicMint,whiteListMint,isPublicActive } = useWeb3()
-  const isActive = true
-  return isActive ? ( <PublicMintButton mint={publicMint} />) : ( <WhiteListMintButton mint={whiteListMint} />) 
+  let isPublicMint=false
+  return isPublicMint ? 
+    ( <PublicMintButton mint={publicMint} />) :
+    ( <WhiteListMintButton mint={whiteListMint} />) 
 }

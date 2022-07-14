@@ -14,7 +14,7 @@ import {
 import { toast } from 'react-toastify'
 import { generateMerkleProof } from '../utils/merkleProofs'
 import { WhiteListAddresses } from '../data/whitelist'
-
+const chainId = process.env.NEXT_PUBLIC_CHAINID
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
@@ -45,7 +45,7 @@ export const useWeb3 = () => {
         const signer = web3Provider.getSigner()
         const address = await signer.getAddress()
         const network = await web3Provider.getNetwork()
-        
+        await handleChainChanged()
    
         dispatch({
           type: 'SET_WEB3_PROVIDER',
@@ -123,8 +123,8 @@ export const useWeb3 = () => {
           errorMessage = (error as any).error.message
         }
         toast.error(errorMessage, {
-          position: 'top-right',
-          toastId: 'WL-MINT-ERR',
+          position: 'bottom-right',
+          toastId: 'P-MINT-ERR',
         })
       }
     }
@@ -159,18 +159,41 @@ export const useWeb3 = () => {
         }
         toast.error(errorMessage, {
           position: 'bottom-right',
-          toastId: 'WL-MINT-ERR',
+          toastId: 'P-MINT-ERR',
         })
       }
     }
   }, [])
+  const handleChainChanged = async () => {
+    if (web3Modal && web3Modal.cachedProvider) {
+      const provider = await web3Modal.connect()
+      const web3Provider = new ethers.providers.Web3Provider(provider)
+      const network = await web3Provider.getNetwork()
+      console.log(network.chainId);
+      
+      if (network.chainId!=Number(chainId)){
+        web3Provider.send('wallet_switchEthereumChain',[
+          { chainId:  '0x'+chainId}            
+        ])
+        toast.info('Web3 Network Changed',{
+          position: 'bottom-right',
+          toastId: 'CH-NETWORK',
+        })
+      }
+
+    } else {
+      toast.info('Network not detected',{
+        position: 'bottom-right',
+        toastId: 'NW-ERR',
+      })    }
+  }
   // Auto connect to the cached provider
   useEffect(() => {
     if (web3Modal && web3Modal.cachedProvider) {
       connect()
     }
   }, [connect])
-
+  handleChainChanged()
   // EIP-1193 events
   useEffect(() => {
     if (provider?.on) {
@@ -183,15 +206,7 @@ export const useWeb3 = () => {
       }
 
       // https://docs.ethers.io/v5/concepts/best-practices/#best-practices--network-changes
-      const handleChainChanged = (_hexChainId: string) => {
-        if (typeof window !== 'undefined') {
-          console.log('switched to chain...', _hexChainId)
-          toast.info('Web3 Network Changed')
-          window.location.reload()
-        } else {
-          console.log('window is undefined')
-        }
-      }
+      
 
       const handleDisconnect = (error: { code: number; message: string }) => {
         // eslint-disable-next-line no-console
