@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-
+import { MintButton } from '../components/Elements/Button/MintButton'
 import 'react-toastify/dist/ReactToastify.min.css';
 import {ToastContainer} from 'react-toastify'
 // 3rd Party
@@ -33,7 +33,7 @@ import {
   Hooareyou,
 } from '../components/Patials/Sections'
 import Footer from '../components/Patials/Footer'
-import CountDownTimer from '../components/Patials/Counter/Counter';
+
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false)
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
                         </span>
                       </Button> */}
                       
-                      <CountDownTimer />
+                      <MintButton />
 
                     </AnimateWrapper>
                   </div>
