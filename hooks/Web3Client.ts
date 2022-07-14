@@ -34,7 +34,6 @@ if (typeof window !== 'undefined') {
 }
 
 export const useWeb3 = () => {
-  
   const [state, dispatch] = useReducer(web3Reducer, web3InitialState)
   const { provider, web3Provider, address, network } = state
   const connect = useCallback(async () => {
@@ -47,7 +46,7 @@ export const useWeb3 = () => {
         const network = await web3Provider.getNetwork()
         await handleChainChanged()
         await handleSaleStatus()
-   
+
         dispatch({
           type: 'SET_WEB3_PROVIDER',
           provider,
@@ -73,11 +72,9 @@ export const useWeb3 = () => {
           FifthDimensionAbi,
           signer
         )
-        const publicSaleIsActive  = await nftContract.isPublicSaleActive()
-        saleStatus = publicSaleIsActive===true
-      } catch (error) {
-        
-      }
+        const publicSaleIsActive = await nftContract.isPublicSaleActive()
+        saleStatus = publicSaleIsActive === true
+      } catch (error) {}
     } else {
       console.error('No Web3Modal')
     }
@@ -88,8 +85,8 @@ export const useWeb3 = () => {
       if (provider?.disconnect && typeof provider.disconnect === 'function') {
         await provider.disconnect()
       }
-      
-      toast.info('Disconnected from Web3',{
+
+      toast.info('Disconnected from Web3', {
         position: 'bottom-right',
         toastId: 'DIS-NETWORK',
       })
@@ -113,22 +110,21 @@ export const useWeb3 = () => {
           signer
         )
         const nftTx = await nftContract.mint()
-        let tx = await nftTx.wait()
         // eslint-disable-next-line no-console
-        toast.promise(nftTx, {
-          pending: 'Minting Your Owlie',
-          success: 'Yay, new Owlie minted',
-          error: 'Error',
-        },
-        {
+        toast.info('minting Owlie!', {
           position: 'bottom-right',
-          toastId: 'PL-MINT-FEED',
-        }
-        )
+          toastId: 'PL-MINT-P',
+        })
+        let tx = await nftTx.wait()
+        toast.dismiss('PL-MINT-P')
+        toast.success('Owlie Minted!', {
+          position: 'bottom-right',
+          toastId: 'PL-MINT-SCS',
+        })
       } catch (error) {
         let errorMessage = 'Something Wrong!'
         if (error instanceof Error) {
-          errorMessage = (error as any).error.message
+          errorMessage = (error as any).error?.message
         }
         toast.error(errorMessage, {
           position: 'bottom-right',
@@ -152,19 +148,18 @@ export const useWeb3 = () => {
         )
         const merkleProof = generateMerkleProof(WhiteListAddresses, address)
         const nftTx = await nftContract.whitelistMint(merkleProof.proof)
-
-        let tx = await nftTx.wait()
+        
         // eslint-disable-next-line no-console
-        toast.promise(nftTx, {
-          pending: 'Minting Your Owli',
-          success: 'Yay, new Owli minted',
-          error: 'Error',
-        },
-          {
-            position: 'bottom-right',
-            toastId: 'WL-MINT-FEED',
-          }
-        )
+        toast.info('minting Owlie!', {
+          position: 'bottom-right',
+          toastId: 'WL-MINT-P',
+        })
+        let tx = await nftTx.wait()
+        toast.dismiss('PL-MINT-P')
+        toast.success('Owlie Minted!', {
+          position: 'bottom-right',
+          toastId: 'WL-MINT-SCS',
+        })
       } catch (error) {
         let errorMessage = 'Something Wrong!'
         if (error instanceof Error) {
@@ -182,21 +177,21 @@ export const useWeb3 = () => {
       const provider = await web3Modal.connect()
       const web3Provider = new ethers.providers.Web3Provider(provider)
       const network = await web3Provider.getNetwork()
-      if (network.chainId!=Number(chainId)){
-        web3Provider.send('wallet_switchEthereumChain',[
-          { chainId:  '0x'+chainId}            
+      if (network.chainId != Number(chainId)) {
+        web3Provider.send('wallet_switchEthereumChain', [
+          { chainId: '0x' + chainId },
         ])
-        toast.info('Web3 Network Changed',{
+        toast.info('Web3 Network Changed', {
           position: 'bottom-right',
           toastId: 'CH-NETWORK',
         })
       }
-
     } else {
-      toast.info('Network not detected',{
+      toast.info('Network not detected', {
         position: 'bottom-right',
         toastId: 'NW-ERR',
-      })    }
+      })
+    }
   }
   // Auto connect to the cached provider
   useEffect(() => {
@@ -205,14 +200,12 @@ export const useWeb3 = () => {
     }
   }, [connect])
 
-  
   handleChainChanged()
   // EIP-1193 events
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts: string[]) => {
-        toast.info('Changed Web3 Account',
-        {
+        toast.info('Changed Web3 Account', {
           position: 'bottom-right',
           toastId: 'CH-Account',
         })
@@ -223,7 +216,6 @@ export const useWeb3 = () => {
       }
 
       // https://docs.ethers.io/v5/concepts/best-practices/#best-practices--network-changes
-      
 
       const handleDisconnect = (error: { code: number; message: string }) => {
         // eslint-disable-next-line no-console
