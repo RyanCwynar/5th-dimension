@@ -12,7 +12,6 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract FifthDimension is ERC721, AccessControl {
     bytes32 public ADMIN_ROLE = keccak256("ADMIN_ROLE");
-    bytes32 public MOD_ROLE = keccak256("MOD_ROLE");
     using Strings for uint256;
 
     bytes32 private _whitelistMerkleRoot;
