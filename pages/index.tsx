@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-
+import { MintButton } from '../components/Elements/Button/MintButton'
+import 'react-toastify/dist/ReactToastify.min.css';
+import {ToastContainer} from 'react-toastify'
 // 3rd Party
 import { Link, animateScroll as scroll } from 'react-scroll'
 
@@ -32,6 +34,7 @@ import {
 } from '../components/Patials/Sections'
 import Footer from '../components/Patials/Footer'
 
+
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false)
   const resizeHanlder = () => {
@@ -57,6 +60,7 @@ const Home: NextPage = () => {
         {/* Banner Section */}
         <Section className="relative max-h-[840px] xl:h-screen">
           <div className="relative min-h-[182px] overflow-hidden pb-[1px] tablet:min-h-[389px] lg:min-h-[540px] xl:min-h-[600px] xln:min-h-[670px] xxln:min-h-[710px] xxl:min-h-[768px] 3xl:min-h-[840px]">
+        
             <video
               src="/5th-dimension-banner.mp4"
               className="fixed max-h-[182px] w-full object-cover tablet:max-h-[389px] lg:max-h-[540px] xl:max-h-[600px] xln:max-h-[670px] xxln:max-h-[710px] xxl:max-h-[768px] 3xl:max-h-[840px]"
@@ -120,12 +124,10 @@ const Home: NextPage = () => {
                       className="text-center tablet:text-left"
                       animateType={AnimateType.FADEIN}
                     >
-                      <Button
+                    {/* <Button
                         size={ButtonSize.PRIMARY}
                         className="mx-auto mt-[30px] tablet:mt-7 xl:mt-[34px]"
-                        onClick={() =>
-                          window.open('https://discord.gg/BW4XKRhyHs', '_blank')
-                        }
+                        onClick={MintButton}
                       >
                         <span className="ml-2 flex items-center justify-start">
                           <img
@@ -135,7 +137,10 @@ const Home: NextPage = () => {
                           />
                           Join Discord
                         </span>
-                      </Button>
+                      </Button> */}
+                      
+                      <MintButton />
+
                     </AnimateWrapper>
                   </div>
                 </div>
@@ -157,22 +162,15 @@ const Home: NextPage = () => {
                 <DoubleArrowDown className="w-4 tablet:w-5 xl:mt-1" />
               </Link>
             </div>
+            <ToastContainer />
           </div>
         </Section>
         <Section className="relative z-30 -mt-1 bg-contentGradient">
           <Hooareyou />
 
           <OwileNFTSection />
-
-          <CreateOwileSection />
-
-
-
+          {/* <CreateOwileSection /> */}
           <ShuggaverseSection />
-
-
-
-
 
           <TeamSection />
 

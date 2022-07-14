@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, animateScroll as scroll } from 'react-scroll'
 import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
+import { Web3Button } from '../../Elements/Button/Web3Button'
 
 const MenuAlt = () => {
   return (
@@ -62,12 +63,12 @@ const MenuClose = () => {
 }
 
 function Header() {
-  
+
   const [isOpen, setIsOpen] = useState(false)
   const resizeHanlder = () => {
     const width = window.innerWidth;
 
-    if ( width > 1023 ) {
+    if (width > 1023) {
       setIsOpen(false)
     }
   };
@@ -78,9 +79,9 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    if ( isOpen ) document.body.style.overflowY = 'hidden'
+    if (isOpen) document.body.style.overflowY = 'hidden'
     else document.body.style.overflowY = 'scroll'
-    
+
   }, [isOpen])
 
   return (
@@ -125,8 +126,12 @@ function Header() {
               </div>
             </div>
             <div className="flex items-center justify-end" style={{ flex: 2 }}>
-              <div className="items-center justify-center hidden lg:flex">
-                <a href="https://discord.gg/BW4XKRhyHs" target={'_blank'} className="social-link">
+              <div className=" items-center justify-center hidden lg:flex">
+                <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
+                <Web3Button />
+                </AnimateWrapper>
+
+                <a href="https://discord.gg/BW4XKRhyHs" target={'_blank'} className="ml-4 social-link">
                   <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
                     <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
                   </AnimateWrapper>
@@ -162,31 +167,33 @@ function Header() {
               //   delayOrder={1.5 + index * 0.5}
               //   key={index}
               // >
-                <Link
-                  to={route.to}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  onClick={() => setIsOpen(false)}
-                  className={`${route.className} mb-5 lg:mb-[50px]`}
-                  key={index}
-                >
-                  {route.title}
-                </Link>
+              <Link
+                to={route.to}
+                smooth={true}
+                offset={0}
+                duration={500}
+                onClick={() => setIsOpen(false)}
+                className={`${route.className} mb-5 lg:mb-[50px]`}
+                key={index}
+              >
+                {route.title}
+              </Link>
               // </SlideIn>
             ))}
+            <Web3Button />
             <div className="flex items-center justify-center lg:hidden mt-[47px] lg:mt-[87px]">
               <a href="https://discord.gg/BW4XKRhyHs" target={'_blank'} className="social-link">
                 {/* <SlideIn xOffset={-100} delayOrder={4}> */}
-                  <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
+                <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
                 {/* </SlideIn> */}
               </a>
               <a href="https://twitter.com/5thDimension_io " target={'_blank'} className="social-link">
                 {/* <SlideIn xOffset={-100} delayOrder={4.5}> */}
-                  <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
+                <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
                 {/* </SlideIn> */}
               </a>
             </div>
+
           </div>
         </div>
 

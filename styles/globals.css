@@ -69,3 +69,7 @@ li::marker {
 .my-anchor-css-class {
   @apply text-3 tablet:text-3.75 block text-white text-opacity-50 pt-[2px]
 }
+
+.web3modal-modal-lightbox {
+  @apply !z-50
+}
