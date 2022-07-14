@@ -126,9 +126,12 @@ function Header() {
               </div>
             </div>
             <div className="flex items-center justify-end" style={{ flex: 2 }}>
+              <div className=" items-center justify-center hidden lg:flex">
+                <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
                 <Web3Button />
-              <div className="ml-4 items-center justify-center hidden lg:flex">
-                <a href="https://discord.gg/BW4XKRhyHs" target={'_blank'} className="social-link">
+                </AnimateWrapper>
+
+                <a href="https://discord.gg/BW4XKRhyHs" target={'_blank'} className="ml-4 social-link">
                   <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
                     <img src="/Icons/IDiscord.png" className="mr-2 max-w-[44px]" alt="" />
                   </AnimateWrapper>

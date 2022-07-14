@@ -167,16 +167,8 @@ const Home: NextPage = () => {
           <Hooareyou />
 
           <OwileNFTSection />
-
-          <CreateOwileSection />
-
-
-
+          {/* <CreateOwileSection /> */}
           <ShuggaverseSection />
-
-
-
-
 
           <TeamSection />
 

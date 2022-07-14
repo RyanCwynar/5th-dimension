@@ -3,7 +3,6 @@ import { ethers } from 'ethers'
 import Web3Modal from 'web3modal'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { abi as FifthDimensionAbi } from '../utils/FifthDimension.json'
-
 import {
   Web3ProviderState,
   Web3Action,
@@ -15,6 +14,7 @@ import { toast } from 'react-toastify'
 import { generateMerkleProof } from '../utils/merkleProofs'
 import { WhiteListAddresses } from '../data/whitelist'
 const chainId = process.env.NEXT_PUBLIC_CHAINID
+let saleStatus = false
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
@@ -34,9 +34,9 @@ if (typeof window !== 'undefined') {
 }
 
 export const useWeb3 = () => {
+  
   const [state, dispatch] = useReducer(web3Reducer, web3InitialState)
   const { provider, web3Provider, address, network } = state
-
   const connect = useCallback(async () => {
     if (web3Modal) {
       try {
@@ -46,6 +46,7 @@ export const useWeb3 = () => {
         const address = await signer.getAddress()
         const network = await web3Provider.getNetwork()
         await handleChainChanged()
+        await handleSaleStatus()
    
         dispatch({
           type: 'SET_WEB3_PROVIDER',
@@ -61,7 +62,7 @@ export const useWeb3 = () => {
       console.error('No Web3Modal')
     }
   }, [])
-  const isPublicActive = useCallback(async () => {
+  const handleSaleStatus = useCallback(async () => {
     if (web3Modal) {
       try {
         const provider = await web3Modal.connect()
@@ -72,12 +73,10 @@ export const useWeb3 = () => {
           FifthDimensionAbi,
           signer
         )
-        return  await nftContract.isPublicSaleActive()
- 
+        const publicSaleIsActive  = await nftContract.isPublicSaleActive()
+        saleStatus = publicSaleIsActive===true
       } catch (error) {
-
-
-
+        
       }
     } else {
       console.error('No Web3Modal')
@@ -89,7 +88,11 @@ export const useWeb3 = () => {
       if (provider?.disconnect && typeof provider.disconnect === 'function') {
         await provider.disconnect()
       }
-      toast.error('Disconnected from Web3')
+      
+      toast.info('Disconnected from Web3',{
+        position: 'bottom-right',
+        toastId: 'DIS-NETWORK',
+      })
       dispatch({
         type: 'RESET_WEB3_PROVIDER',
       } as Web3Action)
@@ -116,7 +119,12 @@ export const useWeb3 = () => {
           pending: 'Minting Your Owlie',
           success: 'Yay, new Owlie minted',
           error: 'Error',
-        })
+        },
+        {
+          position: 'bottom-right',
+          toastId: 'PL-MINT-FEED',
+        }
+        )
       } catch (error) {
         let errorMessage = 'Something Wrong!'
         if (error instanceof Error) {
@@ -151,7 +159,12 @@ export const useWeb3 = () => {
           pending: 'Minting Your Owli',
           success: 'Yay, new Owli minted',
           error: 'Error',
-        })
+        },
+          {
+            position: 'bottom-right',
+            toastId: 'WL-MINT-FEED',
+          }
+        )
       } catch (error) {
         let errorMessage = 'Something Wrong!'
         if (error instanceof Error) {
@@ -169,8 +182,6 @@ export const useWeb3 = () => {
       const provider = await web3Modal.connect()
       const web3Provider = new ethers.providers.Web3Provider(provider)
       const network = await web3Provider.getNetwork()
-      console.log(network.chainId);
-      
       if (network.chainId!=Number(chainId)){
         web3Provider.send('wallet_switchEthereumChain',[
           { chainId:  '0x'+chainId}            
@@ -193,12 +204,18 @@ export const useWeb3 = () => {
       connect()
     }
   }, [connect])
+
+  
   handleChainChanged()
   // EIP-1193 events
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts: string[]) => {
-        toast.info('Changed Web3 Account')
+        toast.info('Changed Web3 Account',
+        {
+          position: 'bottom-right',
+          toastId: 'CH-Account',
+        })
         dispatch({
           type: 'SET_ADDRESS',
           address: accounts[0],
@@ -238,6 +255,6 @@ export const useWeb3 = () => {
     disconnect,
     publicMint,
     whiteListMint,
-    isPublicActive,
+    saleStatus,
   } as Web3ProviderState
 }

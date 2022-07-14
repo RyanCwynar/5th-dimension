@@ -25,7 +25,7 @@ const WhiteListMintButton = ({ mint }: PublicProps) => {
   return mint ? (
     <Button
       size={ButtonSize.PRIMARY}
-      className="mx-auto mt-[30px] tablet:mt-7 xl:mt-[34px]"
+      className="mx-auto mt-[30px] tablet:mt-7 xl:mt-[34px] "
       onClick={mint}>
       WhiteList Mint
     </Button>
@@ -35,9 +35,8 @@ const WhiteListMintButton = ({ mint }: PublicProps) => {
 }
 
 export function MintButton() {
-  const { web3Provider, publicMint,whiteListMint,isPublicActive } = useWeb3()
-  let isPublicMint=false
-  return isPublicMint ? 
+  const { web3Provider, publicMint,whiteListMint,saleStatus } = useWeb3()
+  return saleStatus ? 
     ( <PublicMintButton mint={publicMint} />) :
     ( <WhiteListMintButton mint={whiteListMint} />) 
 }
