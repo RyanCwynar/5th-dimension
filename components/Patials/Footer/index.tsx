@@ -34,6 +34,12 @@ const Footer = () => {
             <img src="/Icons/IMedium.png" className="ml-2 w-7 xl:w-11" alt="" />
           </AnimateWrapper>
         </a>
+
+        <a href="https://opensea.io/collection/owlies-from-the-5th-dimension" target={'_blank'} className="social-link">
+          <AnimateWrapper yOffset={50} delayOrder={3.5} animateType={AnimateType.FADEIN}>
+            <img src="/Icons/IOpenSea.png" className="ml-2 w-7 opacity-50 p-1.5 xl:w-11" alt="" />
+          </AnimateWrapper>
+        </a>
       </div>
     </Section>
   )

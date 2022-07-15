@@ -141,6 +141,11 @@ function Header() {
                     <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
                   </AnimateWrapper>
                 </a>
+                <a href="https://opensea.io/collection/owlies-from-the-5th-dimension" target={'_blank'} className="ml-4 social-link">
+                  <AnimateWrapper xOffset={-100} delayOrder={4} animateType={AnimateType.SLIDEIN}>
+                    <img src="/Icons/IOpenSea.png" className="p-1.5 opacity-50 max-w-[44px]" alt="" />
+                  </AnimateWrapper>
+                </a>
               </div>
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -192,6 +197,12 @@ function Header() {
                 <img src="/Icons/ITwitter.png" className="ml-2 max-w-[40px]" alt="" />
                 {/* </SlideIn> */}
               </a>
+              <a href="https://opensea.io/collection/owlies-from-the-5th-dimension" target={'_blank'} className="social-link">
+                {/* <SlideIn xOffset={-100} delayOrder={4.5}> */}
+                <img src="/Icons/IOpenSea.png" className="ml-2 max-w-[40px] opacity-50" alt="" />
+                {/* </SlideIn> */}
+              </a>
+              
             </div>
 
           </div>
