@@ -111,7 +111,7 @@ export const useWeb3 = () => {
         )
         const nftTx = await nftContract.mint()
         // eslint-disable-next-line no-console
-        toast.info('minting Owlie!', {
+        toast.info('Minting Owlie!', {
           position: 'bottom-right',
           toastId: 'PL-MINT-P',
         })
@@ -126,7 +126,7 @@ export const useWeb3 = () => {
         if (error instanceof Error) {
           errorMessage = (error as any).error?.message
         }
-        toast.error(errorMessage, {
+        toast.error(errorMessage.replaceAll('_', ' '), {
           position: 'bottom-right',
           toastId: 'P-MINT-ERR',
         })
@@ -165,7 +165,7 @@ export const useWeb3 = () => {
         if (error instanceof Error) {
           errorMessage = (error as any).error?.message
         }
-        toast.error(errorMessage, {
+        toast.error(errorMessage.replaceAll('_', ' '), {
           position: 'bottom-right',
           toastId: 'P-MINT-ERR',
         })
