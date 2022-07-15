@@ -24,7 +24,7 @@ interface DisconnectProps {
 
 const DisconnectButton = ({ disconnect }: DisconnectProps) => {
   return disconnect ? (
-    <Button  size={ButtonSize.SMALL} className="w-auto !max-w-[100%] flex flex-col content-center p-4" onClick={disconnect}>
+    <Button  size={ButtonSize.SMALL} className="w-auto !max-w-[100%] flex flex-col justify-center p-4" onClick={disconnect}>
       Disconnect
     </Button>
   ) : (
