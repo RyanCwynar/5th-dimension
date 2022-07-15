@@ -565,10 +565,10 @@ const merkleRoot = merkleTree(whitelist);
 console.log(merkleRoot.getHexRoot())
 
   module.exports = [
-    1657832400, //whitelistStart Thursday, July 14, 2022 4:00:00 PM GMT-05:00
-    1657918740, //whitelistEnd Friday, July 15, 2022 3:59:00 PM GMT-05:00
-    1657918800, //publicStart Friday, July 15, 2022 4:00:00 PM GMT-05:00
-    1658005200, //publicEnd Saturday, July 16, 2022 4:00:00 PM GMT-05:00
+    1657918800, //whitelistStart Friday, July 14, 2022 4:00:00 PM GMT-05:00
+    1658005140, //whitelistEnd Saturday, July 16, 2022 3:59:00 PM GMT-05:00
+    1658005200, //publicStart Saturday, July 16, 2022 4:00:00 PM GMT-05:00
+    1658091600, //publicEnd Sunday, July 17, 2022 4:00:00 PM GMT-05:00
     "0x03aa67f9c4b5d32605a5301fbbb4b685d742cfc41bcabd7e3bebc1c4420b7a1a", //whitelist
     "Owlies from the 5th Dimension", //name
     "OWLIES", //symbol

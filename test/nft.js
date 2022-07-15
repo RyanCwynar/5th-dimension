@@ -38,10 +38,7 @@ describe('5th Dimension', function () {
     merkleRoot = merkleTree(signers);
     timestamp = (await getLatestTimestamp()).toNumber()
 
-    console.log(timestamp)
-
-
-    const NFT = await ethers.getContractFactory("FifthDimension");
+    const NFT = await ethers.getContractFactory("FifthDimensionMock");
 
     nft = await NFT.deploy(
       whitelistStart,
@@ -119,7 +116,7 @@ describe('5th Dimension', function () {
     minted.map(m => {
       expect(m).to.be.greaterThan(55)
     })
-    expect(await nft.totalSupply()).to.be.equal(55+6)
+    expect(await nft.totalSupply()).to.be.equal(55 + 6)
 
     //tries to claim again
     await expect(
@@ -142,84 +139,82 @@ describe('5th Dimension', function () {
     minted.map(m => {
       expect(m).to.be.greaterThan(55)
     })
-    expect(await nft.totalSupply()).to.be.equal(55+6+1)
+    expect(await nft.totalSupply()).to.be.equal(55 + 6 + 1)
   })
 
-    it("Test public mint", async function() {
+  it("Test public mint", async function () {
 
-      await nft.airdrop(signers[9].address, 55, { gasLimit: "7000000" });
+    await nft.airdrop(signers[9].address, 55, { gasLimit: "7000000" });
 
-      await timeIncreaseTo(timestamp + 60*61)
+    await timeIncreaseTo(timestamp + 60 * 61)
 
-      //tries to mint where public sale is not yet started
-      await expect(
-          nft.connect(signers[2]).mint()
-      ).to.be.revertedWith('PUBLIC_SALE_INACTIVE');
+    //tries to mint where public sale is not yet started
+    await expect(
+      nft.connect(signers[2]).mint()
+    ).to.be.revertedWith('PUBLIC_SALE_INACTIVE');
 
-      await timeIncreaseTo(publicStart + 60)
+    await timeIncreaseTo(publicStart + 60)
 
-      let minted = []
-      await Promise.all(new Array(20).fill(0).map(async (a, i)=> {
-          let tx = await nft.connect(signers[i]).mint({gasLimit: "200000"})
-          tx = await tx.wait()
-          let tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
-          minted = [...minted, ...tokens]
-      }))
-      expect(minted.length).to.be.equal(20);
-      minted.map(m => {
-          expect(m).to.be.greaterThan(55)
-      })
-      expect(await nft.totalSupply()).to.be.equal(55+20)
-
-      let tx = await nft.connect(signers[1]).mint({gasLimit: "200000"})
+    let minted = []
+    await Promise.all(new Array(17).fill(0).map(async (a, i) => {
+      let tx = await nft.connect(signers[i]).mint({ gasLimit: "200000" })
       tx = await tx.wait()
-      console.log("public mint", tx.gasUsed.toNumber())
       let tokens = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())
       minted = [...minted, ...tokens]
-
-      expect(await nft.totalSupply()).to.be.equal(55+21)
-
-      //tries to mint more than 2
-      await expect(
-          nft.connect(signers[1]).mint({gasLimit: "200000"})
-      ).to.be.revertedWith('PUBLIC_TOKEN_LIMIT');
-
-      //tries to mint where public sale ended
-      await timeIncreaseTo(publicEnd + 60)
-      await expect(
-          nft.connect(signers[1]).mint({gasLimit: "200000"})
-      ).to.be.revertedWith('PUBLIC_SALE_INACTIVE');
-
-      //override public sale
-      tx = await nft.overrideSales(true, false);
-      tx = await tx.wait()
-      await nft.connect(signers[7]).mint()
-      minted = [...minted, ...tokens]
-      expect(minted.length).to.be.equal(22);
-      minted.map(m => {
-          expect(m).to.be.greaterThan(55)
-      })
-      expect(await nft.totalSupply()).to.be.equal(55+22)
-
+    }))
+    expect(minted.length).to.be.equal(17);
+    minted.map(m => {
+      expect(m).to.be.greaterThan(55)
     })
+    expect(await nft.totalSupply()).to.be.equal(55 + 17)
 
-    it("Test URI reveal", async function() {
+    await nft.connect(signers[1]).mint({ gasLimit: "200000" })
+    expect(await nft.totalSupply()).to.be.equal(55 + 17 + 1)
 
-      await nft.airdrop(signers[9].address, 55, { gasLimit: "7000000" });
-      await timeIncreaseTo(publicStart + 60)
+    //tries to mint more than 2
+    await expect(
+      nft.connect(signers[1]).mint({ gasLimit: "200000" })
+    ).to.be.revertedWith('PUBLIC_TOKEN_LIMIT');
 
-      let tx = await nft.connect(signers[1]).mint({gasLimit: "200000"})
-      tx = await tx.wait()
-      const token = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())[0]
-      const tempUri = await nft.tokenURI(token);
-      expect(tempUri).to.be.equal("www.tempuri.com/")
+    //tries to mint where public sale ended
+    await timeIncreaseTo(publicEnd + 60)
+    await expect(
+      nft.connect(signers[1]).mint({ gasLimit: "200000" })
+    ).to.be.revertedWith('PUBLIC_SALE_INACTIVE');
 
-      await nft.setBaseURI("www.baseuri.com/");
-      await nft.toggleReveal();
-      const baseUri = await nft.tokenURI(token);
-      expect(baseUri).to.be.equal(`www.baseuri.com/${token}.json`)
+    //override public sale
+    await nft.overrideSales(true, false);
+    await nft.connect(signers[7]).mint()
+    expect(await nft.totalSupply()).to.be.equal(55 + 17 + 1 + 1)
 
-    })
+    await nft.connect(signers[8]).mint({ gasLimit: "200000" })
+    expect(await nft.totalSupply()).to.be.equal(55 + 17 + 1 + 1 + 1)
+
+
+    //tries to mint more than max Supply
+    await expect(
+      nft.connect(signers[4]).mint({ gasLimit: "200000" })
+    ).to.be.revertedWith('REACHED_MAX_SUPPLY');
+
+  })
+
+  it("Test URI reveal", async function () {
+
+    await nft.airdrop(signers[9].address, 55, { gasLimit: "7000000" });
+    await timeIncreaseTo(publicStart + 60)
+
+    let tx = await nft.connect(signers[1]).mint({ gasLimit: "200000" })
+    tx = await tx.wait()
+    const token = tx.events.filter(e => e.event === "Transfer").map(e => e.args[2].toNumber())[0]
+    const tempUri = await nft.tokenURI(token);
+    expect(tempUri).to.be.equal("www.tempuri.com/")
+
+    await nft.setBaseURI("www.baseuri.com/");
+    await nft.toggleReveal();
+    const baseUri = await nft.tokenURI(token);
+    expect(baseUri).to.be.equal(`www.baseuri.com/${token}.json`)
+
+  })
 
 });
 

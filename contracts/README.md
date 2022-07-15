@@ -16,8 +16,8 @@ npx hardhat help
 
 
 ### Deploy to network: 
-npx hardhat run --network rinkeby ./scripts/deploy.js
-npx hardhat run --network mainnet ../scripts/deploy.js
+npx hardhat run --network rinkeby ./scripts/rinkeby_deploy.js
+npx hardhat run --network mainnet ./scripts/mainnet_deploy.js
 
 ## Rinkeby
 FifthDimension at 0xb2Ae41cC1710AF6C5335d69992b2688AaD82592D

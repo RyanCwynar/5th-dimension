@@ -17,7 +17,7 @@ contract FifthDimension is ERC721, Ownable {
     using Strings for uint256;
     using Counters for Counters.Counter;
 
-    uint256 private constant _COLLECTION_SIZE = 555;
+    uint256 private constant _COMMUNITY_SIZE = 500;
     uint256 private constant _AIRDROP_LIMIT = 55;
     uint256 private constant _WHITELIST_LIMIT = 1;
     uint256 private constant _PUBLIC_LIMIT = 2;
@@ -27,7 +27,7 @@ contract FifthDimension is ERC721, Ownable {
     uint256 private _overridePublicSale;
 
     uint256 private _supplyTeamWallet; //pairs with _AIRDROP_LIMIT
-    uint256 private _supplyCommunity; //pairs with _COLLECTION_SIZE - _AIRDROP_LIMIT
+    uint256 private _supplyCommunity; //pairs with _COMMUNITY_SIZE
 
     uint256 public whitelistStart;
     uint256 public whitelistEnd;
@@ -139,7 +139,7 @@ contract FifthDimension is ERC721, Ownable {
     function _mint(address to) private {
         require(_supplyTeamWallet >= _AIRDROP_LIMIT, "AIRDROP_NOT_COMPLETED");
         _supplyCommunity += 1;
-        require(_supplyCommunity <= _COLLECTION_SIZE - _AIRDROP_LIMIT, "REACHED_MAX_SUPPLY");
+        require(_supplyCommunity <= _COMMUNITY_SIZE, "REACHED_MAX_SUPPLY");
         _tokenIds.increment();
         uint id = _tokenIds.current();
         _safeMint(to, id);
@@ -153,10 +153,8 @@ contract FifthDimension is ERC721, Ownable {
             : _tempUri;
     }
 
-   
-
     function totalSupply() external view returns(uint256) {
-        return _supplyTeamWallet + _supplyCommunity;
+        return _tokenIds.current();
     }
 
     function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721) returns (bool) {
