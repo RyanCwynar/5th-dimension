@@ -124,7 +124,7 @@ const Home: NextPage = () => {
                       className="text-center tablet:text-left"
                       animateType={AnimateType.FADEIN}
                     >
-                    {/* <Button
+                    <Button
                         size={ButtonSize.PRIMARY}
                         className="mx-auto mt-[30px] tablet:mt-7 xl:mt-[34px]"
                         onClick={MintButton}
@@ -137,9 +137,9 @@ const Home: NextPage = () => {
                           />
                           Join Discord
                         </span>
-                      </Button> */}
+                      </Button>
                       
-                      <MintButton />
+                      {/* <MintButton /> */}
 
                     </AnimateWrapper>
                   </div>
