@@ -16,7 +16,7 @@ npx hardhat help
 
 
 ### Deploy to network: 
-npx hardhat run --network rinkeby ./scripts/rinkeby_deploy.js
+npx hardhat run --network rinkeby ./scripts/ps_rinkeby_deploy.js
 npx hardhat run --network mainnet ./scripts/mainnet_deploy.js
 
 ## Rinkeby
