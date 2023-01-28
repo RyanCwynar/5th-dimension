@@ -1,0 +1,43 @@
+import React from 'react'
+import Heading from '../../Elements/Heading'
+import Section from '../../Layouts/Section'
+import { AnimateType, AnimateWrapper } from '../AnimateWrapper'
+
+export const OwileNFTSection = () => {
+  return (
+    <Section
+      className="mx-auto max-w-[500px] tablet:max-w-[900px] xl:max-w-[1298px] px-6 tablet:px-10 pt-14 tablet:pt-[140px]"
+      navigateID="topSection"
+    >
+      <AnimateWrapper xOffset={-100} delayOrder={1} className="block tablet:hidden" animateType={AnimateType.SLIDEIN}>
+        <Heading className="text-center text-white text-headingMobile tablet:text-8 xl:text-heading">
+          Your Owlie Gives You...
+        </Heading>
+      </AnimateWrapper>
+      <div className="flex flex-col-reverse items-center w-full tablet:flex-row">
+        <div className="w-full max-w-[770px] tablet:pr-12">
+          <AnimateWrapper xOffset={-100} delayOrder={1} className="hidden tablet:block" animateType={AnimateType.SLIDEIN}>
+            <Heading className="text-white text-headingMobile tablet:text-8 xl:text-heading">
+              Your Owlie Gives You...
+            </Heading>
+          </AnimateWrapper>
+          <AnimateWrapper yOffset={0} delayOrder={2} animateType={AnimateType.FADEIN}>
+            <ul className="mt-[25px] tablet:mt-7 xl:mt-[31px] pl-6 list-disc text-3 leading-6 tablet:text-4 xl:text-headingMobile font-RedHat text-primary max-w-[334px] tablet:max-w-[500px] xl:max-w-none mx-auto">
+              <li><span className="font-RedHatBold">A network</span> of artists and collaboration opportunities.</li>
+              <li><span className="font-RedHatBold">Ability</span> to participate in community projects and apply for funding.</li>
+              <li>Access to our <span className="font-RedHatBold">project launchpad.</span>.</li>
+              <li><span className="font-RedHatBold">Whitelist</span> opportunities for community and partner projects.</li>
+              <li>A deep, rich <span className="font-RedHatBold"> Bohemian</span> culture that encourages freedom of expression.</li>
+              <li><span className="font-RedHatBold">Participation</span> in a governance structure built and run by artists.</li>
+            </ul>
+          </AnimateWrapper>
+        </div>
+        <div className="flex-grow">
+          <AnimateWrapper xOffset={100} delayOrder={1.5} animateType={AnimateType.SLIDEIN}>
+            <img src="/T-Bone_golden.png" className="mx-auto max-w-[140px] tablet:max-w-[260px] xl:max-w-[400px]" />
+          </AnimateWrapper>
+        </div>
+      </div>
+    </Section>
+  )
+}

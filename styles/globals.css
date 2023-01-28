@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Red_Hat_Text';
+  src: url(../assets/font/RedHatDisplay-Light.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Red_Hat_Text_Regular';
+  src: url(../assets/font/RedHatText-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Red_Hat_Bold';
+  src: url(../assets/font/RedHatText-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Red_Rose';
+  src: url(../assets/font/RedRose-Bold.ttf);
+}
+
+body {
+  background-color: black;
+}
+
+.hover\:border-gradient-tl-blue-green-gray-900:hover {
+  background: linear-gradient(to right, #200f30, #200f30),
+    linear-gradient(137.62deg, #ffb950 -44.68%, #8001ff 104.21%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.outlineButton > span {
+  @apply text-transparent bg-buttonGradient bg-clip-text;
+}
+
+.outlineButton:hover > span {
+  @apply text-transparent bg-buttonGradient bg-clip-text;
+}
+* .gradient-border-3 {
+  border: 3px solid transparent;
+}
+
+li::marker {
+  @apply text-4 xl:text-5;
+}
+
+.text-gradient {
+  @apply text-transparent bg-textGradient bg-clip-text;
+}
+
+.text-gradient-opacity {
+  @apply text-transparent bg-textGradientOpacity bg-clip-text;
+}
+
+.method-item > div:hover img,
+.social-link:hover img {
+  filter: brightness(1.4);
+}
+
+.faq-content a {
+  @apply underline
+}
+
+.my-anchor-css-class {
+  @apply text-3 tablet:text-3.75 block text-white text-opacity-50 pt-[2px]
+}
+
+.web3modal-modal-lightbox {
+  @apply !z-50
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDirs": ["./src", "./scripts", "./test", "./deploy"],
+    "outDir": "dist"
+  },
+  "include": ["./scripts", "./test", "./deploy"],
+  "files": ["hardhat.config.js"]
+}
